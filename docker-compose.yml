@@ -1,0 +1,43 @@
+version: '3'
+services:
+  controller:
+    build: cfgssl-controller
+    hostname: controller
+    volumes:
+      - './cfgssl-controller/py-sc:/py-sc'
+    cap_add:
+      - SYS_ADMIN
+      - NET_ADMIN
+    networks:
+        sdn_control:
+            ipv4_address: 10.0.1.200
+  netopeer:
+    build: cfgssl-netopeer
+    hostname: netopeer
+    cap_add:
+      - SYS_ADMIN
+      - NET_ADMIN
+    environment:
+      - NETCONF_USER=netconf
+      - NETCONF_PASSWORD=netconf
+      - SDN_NET=10.0.1.0/24
+    depends_on:
+      - "controller"
+    networks:
+      - sdn_control
+      - sdn_data
+networks:
+  sdn_control:
+    driver: bridge
+    ipam:
+     config:
+       - subnet: 10.0.1.0/24
+    driver_opts:
+     com.docker.network.bridge.name: sdn_control
+  sdn_data:
+    driver: bridge
+    ipam:
+     config:
+       - subnet: 192.168.123.0/24
+    driver_opts:
+     com.docker.network.bridge.name: sdn_data

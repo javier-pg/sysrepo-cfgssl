@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module name="ietf-tls-common"
+        xmlns="urn:ietf:params:xml:ns:yang:yin:1"
+        xmlns:tlscmn="urn:ietf:params:xml:ns:yang:ietf-tls-common">
+  <yang-version value="1"/>
+  <namespace uri="urn:ietf:params:xml:ns:yang:ietf-tls-common"/>
+  <prefix value="tlscmn"/>
+  <organization>
+    <text>IETF NETCONF (Network Configuration) Working Group</text>
+  </organization>
+  <contact>
+    <text>WG Web:   &lt;http://tools.ietf.org/wg/netconf/&gt;
+WG List:  &lt;mailto:netconf@ietf.org&gt;
+
+Author:   Kent Watsen
+          &lt;mailto:kwatsen@juniper.net&gt;
+
+Author:   Gary Wu
+          &lt;mailto:garywu@cisco.com&gt;</text>
+  </contact>
+  <description>
+    <text>This module defines a common features, identities, and groupings
+for Transport Layer Security (TLS).
+
+Copyright (c) 2017 IETF Trust and the persons identified as
+authors of the code. All rights reserved.
+
+Redistribution and use in source and binary forms, with or
+without modification, is permitted pursuant to, and subject
+to the license terms contained in, the Simplified BSD
+License set forth in Section 4.c of the IETF Trust's
+Legal Provisions Relating to IETF Documents
+(http://trustee.ietf.org/license-info).
+
+This version of this YANG module is part of RFC XXXX; see
+the RFC itself for full legal notices.</text>
+  </description>
+  <revision date="2017-10-30">
+    <description>
+      <text>Initial version</text>
+    </description>
+    <reference>
+      <text>RFC XXXX: YANG Groupings for TLS Clients and TLS Servers</text>
+    </reference>
+  </revision>
+  <feature name="tls-1_0">
+    <description>
+      <text>TLS Protocol Version 1.0 is supported.</text>
+    </description>
+    <reference>
+      <text>RFC 2246: The TLS Protocol Version 1.0</text>
+    </reference>
+  </feature>
+  <feature name="tls-1_1">
+    <description>
+      <text>TLS Protocol Version 1.1 is supported.</text>
+    </description>
+    <reference>
+      <text>RFC 4346: The Transport Layer Security (TLS) Protocol
+          Version 1.1</text>
+    </reference>
+  </feature>
+  <feature name="tls-1_2">
+    <description>
+      <text>TLS Protocol Version 1.2 is supported.</text>
+    </description>
+    <reference>
+      <text>RFC 5246: The Transport Layer Security (TLS) Protocol
+          Version 1.2</text>
+    </reference>
+  </feature>
+  <feature name="tls-ecc">
+    <description>
+      <text>Elliptic Curve Cryptography (ECC) is supported for TLS.</text>
+    </description>
+    <reference>
+      <text>RFC 4492: Elliptic Curve Cryptography (ECC) Cipher Suites
+          for Transport Layer Security (TLS)</text>
+    </reference>
+  </feature>
+  <feature name="tls-dhe">
+    <description>
+      <text>Ephemeral Diffie-Hellman key exchange is supported for TLS.</text>
+    </description>
+    <reference>
+      <text>RFC 5246: The Transport Layer Security (TLS) Protocol
+          Version 1.2</text>
+    </reference>
+  </feature>
+  <feature name="tls-3des">
+    <description>
+      <text>The Triple-DES block cipher is supported for TLS.</text>
+    </description>
+    <reference>
+      <text>RFC 5246: The Transport Layer Security (TLS) Protocol
+          Version 1.2</text>
+    </reference>
+  </feature>
+  <feature name="tls-gcm">
+    <description>
+      <text>The Galois/Counter Mode authenticated encryption mode is
+supported for TLS.</text>
+    </description>
+    <reference>
+      <text>RFC 5288: AES Galois Counter Mode (GCM) Cipher Suites for
+          TLS</text>
+    </reference>
+  </feature>
+  <feature name="tls-sha2">
+    <description>
+      <text>The SHA2 family of cryptographic hash functions is supported
+for TLS.</text>
+    </description>
+    <reference>
+      <text>FIPS PUB 180-4: Secure Hash Standard (SHS)</text>
+    </reference>
+  </feature>
+  <identity name="tls-version-base">
+    <description>
+      <text>Base identity used to identify TLS protocol versions.</text>
+    </description>
+  </identity>
+  <identity name="tls-1.0">
+    <base name="tls-version-base"/>
+    <description>
+      <text>TLS Protocol Version 1.0.</text>
+    </description>
+    <reference>
+      <text>RFC 2246: The TLS Protocol Version 1.0</text>
+    </reference>
+  </identity>
+  <identity name="tls-1.1">
+    <base name="tls-version-base"/>
+    <description>
+      <text>TLS Protocol Version 1.1.</text>
+    </description>
+    <reference>
+      <text>RFC 4346: The Transport Layer Security (TLS) Protocol
+          Version 1.1</text>
+    </reference>
+  </identity>
+  <identity name="tls-1.2">
+    <base name="tls-version-base"/>
+    <description>
+      <text>TLS Protocol Version 1.2.</text>
+    </description>
+    <reference>
+      <text>RFC 5246: The Transport Layer Security (TLS) Protocol
+          Version 1.2</text>
+    </reference>
+  </identity>
+  <identity name="tls-1.3">
+    <base name="tls-version-base"/>
+    <description>
+      <text>TLS Protocol Version 1.3.</text>
+    </description>
+    <reference>
+      <text>RFC 8446: The Transport Layer Security (TLS) Protocol
+          Version 1.3</text>
+    </reference>
+  </identity>
+  <identity name="cipher-suite-base">
+    <description>
+      <text>Base identity used to identify TLS cipher suites.</text>
+    </description>
+  </identity>
+  <identity name="rsa-with-aes-128-cbc-sha">
+    <base name="cipher-suite-base"/>
+    <description>
+      <text>Cipher suite TLS_RSA_WITH_AES_128_CBC_SHA.</text>
+    </description>
+    <reference>
+      <text>RFC 5246: The Transport Layer Security (TLS) Protocol
+          Version 1.2</text>
+    </reference>
+  </identity>
+  <identity name="rsa-with-aes-256-cbc-sha">
+    <base name="cipher-suite-base"/>
+    <description>
+      <text>Cipher suite TLS_RSA_WITH_AES_256_CBC_SHA.</text>
+    </description>
+    <reference>
+      <text>RFC 5246: The Transport Layer Security (TLS) Protocol
+          Version 1.2</text>
+    </reference>
+  </identity>
+  <identity name="rsa-with-aes-128-cbc-sha256">
+    <base name="cipher-suite-base"/>
+    <description>
+      <text>Cipher suite TLS_RSA_WITH_AES_128_CBC_SHA256.</text>
+    </description>
+    <reference>
+      <text>RFC 5246: The Transport Layer Security (TLS) Protocol
+          Version 1.2</text>
+    </reference>
+  </identity>
+  <identity name="rsa-with-aes-256-cbc-sha256">
+    <base name="cipher-suite-base"/>
+    <description>
+      <text>Cipher suite TLS_RSA_WITH_AES_256_CBC_SHA256.</text>
+    </description>
+    <reference>
+      <text>RFC 5246: The Transport Layer Security (TLS) Protocol
+          Version 1.2</text>
+    </reference>
+  </identity>
+  <identity name="dhe-rsa-with-aes-128-cbc-sha">
+    <base name="cipher-suite-base"/>
+    <description>
+      <text>Cipher suite TLS_DHE_RSA_WITH_AES_128_CBC_SHA.</text>
+    </description>
+    <reference>
+      <text>RFC 5246: The Transport Layer Security (TLS) Protocol
+          Version 1.2</text>
+    </reference>
+  </identity>
+  <identity name="dhe-rsa-with-aes-256-cbc-sha">
+    <base name="cipher-suite-base"/>
+    <description>
+      <text>Cipher suite TLS_DHE_RSA_WITH_AES_256_CBC_SHA.</text>
+    </description>
+    <reference>
+      <text>RFC 5246: The Transport Layer Security (TLS) Protocol
+          Version 1.2</text>
+    </reference>
+  </identity>
+  <identity name="dhe-rsa-with-aes-128-cbc-sha256">
+    <base name="cipher-suite-base"/>
+    <description>
+      <text>Cipher suite TLS_DHE_RSA_WITH_AES_128_CBC_SHA256.</text>
+    </description>
+    <reference>
+      <text>RFC 5246: The Transport Layer Security (TLS) Protocol
+          Version 1.2</text>
+    </reference>
+  </identity>
+  <identity name="dhe-rsa-with-aes-256-cbc-sha256">
+    <base name="cipher-suite-base"/>
+    <description>
+      <text>Cipher suite TLS_DHE_RSA_WITH_AES_256_CBC_SHA256.</text>
+    </description>
+    <reference>
+      <text>RFC 5246: The Transport Layer Security (TLS) Protocol
+          Version 1.2</text>
+    </reference>
+  </identity>
+  <identity name="ecdhe-ecdsa-with-aes-128-cbc-sha256">
+    <base name="cipher-suite-base"/>
+    <description>
+      <text>Cipher suite TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256.</text>
+    </description>
+    <reference>
+      <text>RFC 5289: TLS Elliptic Curve Cipher Suites with
+          SHA-256/384 and AES Galois Counter Mode (GCM)</text>
+    </reference>
+  </identity>
+  <identity name="ecdhe-ecdsa-with-aes-256-cbc-sha384">
+    <base name="cipher-suite-base"/>
+    <description>
+      <text>Cipher suite TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384.</text>
+    </description>
+    <reference>
+      <text>RFC 5289: TLS Elliptic Curve Cipher Suites with
+          SHA-256/384 and AES Galois Counter Mode (GCM)</text>
+    </reference>
+  </identity>
+  <identity name="ecdhe-rsa-with-aes-128-cbc-sha256">
+    <base name="cipher-suite-base"/>
+    <description>
+      <text>Cipher suite TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256.</text>
+    </description>
+    <reference>
+      <text>RFC 5289: TLS Elliptic Curve Cipher Suites with
+          SHA-256/384 and AES Galois Counter Mode (GCM)</text>
+    </reference>
+  </identity>
+  <identity name="ecdhe-rsa-with-aes-256-cbc-sha384">
+    <base name="cipher-suite-base"/>
+    <description>
+      <text>Cipher suite TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384.</text>
+    </description>
+    <reference>
+      <text>RFC 5289: TLS Elliptic Curve Cipher Suites with
+          SHA-256/384 and AES Galois Counter Mode (GCM)</text>
+    </reference>
+  </identity>
+  <identity name="ecdhe-ecdsa-with-aes-128-gcm-sha256">
+    <base name="cipher-suite-base"/>
+    <description>
+      <text>Cipher suite TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256.</text>
+    </description>
+    <reference>
+      <text>RFC 5289: TLS Elliptic Curve Cipher Suites with
+          SHA-256/384 and AES Galois Counter Mode (GCM)</text>
+    </reference>
+  </identity>
+  <identity name="ecdhe-ecdsa-with-aes-256-gcm-sha384">
+    <base name="cipher-suite-base"/>
+    <description>
+      <text>Cipher suite TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384.</text>
+    </description>
+    <reference>
+      <text>RFC 5289: TLS Elliptic Curve Cipher Suites with
+          SHA-256/384 and AES Galois Counter Mode (GCM)</text>
+    </reference>
+  </identity>
+  <identity name="ecdhe-rsa-with-aes-128-gcm-sha256">
+    <base name="cipher-suite-base"/>
+    <description>
+      <text>Cipher suite TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256.</text>
+    </description>
+    <reference>
+      <text>RFC 5289: TLS Elliptic Curve Cipher Suites with
+          SHA-256/384 and AES Galois Counter Mode (GCM)</text>
+    </reference>
+  </identity>
+  <identity name="ecdhe-rsa-with-aes-256-gcm-sha384">
+    <base name="cipher-suite-base"/>
+    <description>
+      <text>Cipher suite TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384.</text>
+    </description>
+    <reference>
+      <text>RFC 5289: TLS Elliptic Curve Cipher Suites with
+          SHA-256/384 and AES Galois Counter Mode (GCM)</text>
+    </reference>
+  </identity>
+  <identity name="rsa-with-3des-ede-cbc-sha">
+    <base name="cipher-suite-base"/>
+    <description>
+      <text>Cipher suite TLS_RSA_WITH_3DES_EDE_CBC_SHA.</text>
+    </description>
+    <reference>
+      <text>RFC 5246: The Transport Layer Security (TLS) Protocol
+          Version 1.2</text>
+    </reference>
+  </identity>
+  <identity name="ecdhe-rsa-with-3des-ede-cbc-sha">
+    <base name="cipher-suite-base"/>
+    <description>
+      <text>Cipher suite TLS_ECDHE_RSA_WITH_3DES_EDE_CBC_SHA.</text>
+    </description>
+    <reference>
+      <text>RFC 4492: Elliptic Curve Cryptography (ECC) Cipher Suites
+          for Transport Layer Security (TLS)</text>
+    </reference>
+  </identity>
+  <identity name="ecdhe-rsa-with-aes-128-cbc-sha">
+    <base name="cipher-suite-base"/>
+    <description>
+      <text>Cipher suite TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA.</text>
+    </description>
+    <reference>
+      <text>RFC 4492: Elliptic Curve Cryptography (ECC) Cipher Suites
+          for Transport Layer Security (TLS)</text>
+    </reference>
+  </identity>
+  <identity name="ecdhe-rsa-with-aes-256-cbc-sha">
+    <base name="cipher-suite-base"/>
+    <description>
+      <text>Cipher suite TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA.</text>
+    </description>
+    <reference>
+      <text>RFC 4492: Elliptic Curve Cryptography (ECC) Cipher Suites
+          for Transport Layer Security (TLS)</text>
+    </reference>
+  </identity>
+  <grouping name="hello-params-grouping">
+    <description>
+      <text>A reusable grouping for TLS hello message parameters.</text>
+    </description>
+    <reference>
+      <text>RFC 5246: The Transport Layer Security (TLS) Protocol
+          Version 1.2</text>
+    </reference>
+    <container name="tls-versions">
+      <description>
+        <text>Parameters regarding TLS versions.</text>
+      </description>
+      <leaf-list name="tls-version">
+        <type name="identityref">
+          <base name="tls-version-base"/>
+        </type>
+        <description>
+          <text>Acceptable TLS protocol versions.
+
+If this leaf-list is not configured (has zero elements)
+the acceptable TLS protocol versions are implementation-
+defined.</text>
+        </description>
+      </leaf-list>
+    </container>
+    <container name="cipher-suites">
+      <description>
+        <text>Parameters regarding cipher suites.</text>
+      </description>
+      <leaf-list name="cipher-suite">
+        <type name="identityref">
+          <base name="cipher-suite-base"/>
+        </type>
+        <ordered-by value="user"/>
+        <description>
+          <text>Acceptable cipher suites in order of descending
+preference.
+
+If this leaf-list is not configured (has zero elements)
+the acceptable cipher suites are implementation-
+defined.</text>
+        </description>
+      </leaf-list>
+    </container>
+  </grouping>
+</module>

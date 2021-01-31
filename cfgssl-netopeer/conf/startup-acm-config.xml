@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<datastores xmlns="urn:cesnet:tmc:datastores:file">
+  <running lock="">
+    <nacm xmlns="urn:ietf:params:xml:ns:yang:ietf-netconf-acm">
+      <enable-nacm>false</enable-nacm>
+      <write-default>permit</write-default>
+    </nacm>
+  </running>
+  <startup lock="">
+    <nacm xmlns="urn:ietf:params:xml:ns:yang:ietf-netconf-acm">
+      <enable-nacm>false</enable-nacm>
+      <write-default>permit</write-default>
+    </nacm>
+  </startup>
+  <candidate modified="false" lock=""/>
+</datastores>

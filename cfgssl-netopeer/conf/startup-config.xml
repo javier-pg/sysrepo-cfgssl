@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<datastores xmlns="urn:cesnet:tmc:datastores:file">
+  <candidate lock="" modified="false"/>
+  <running lock=""/>
+  <startup lock="">
+    <netopeer xmlns="urn:cesnet:tmc:netopeer:1.0">
+      <modules>
+        <module>
+          <name>cfgssl-client</name>
+          <enabled>true</enabled>
+        </module>
+        <module>
+          <name>cfgssl-server</name>
+          <enabled>true</enabled>
+        </module>
+      </modules>
+      <ssh>
+        <client-auth-keys>
+          <client-auth-key>
+            <path>/root/.ssh/id_rsa.pub</path>
+            <username>javier</username>
+          </client-auth-key>
+        </client-auth-keys>
+      </ssh>
+    </netopeer>
+  </startup>
+</datastores>
