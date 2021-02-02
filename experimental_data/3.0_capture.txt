@@ -1,184 +1,266 @@
-21:53:15.831404 IP6 NotebookLab.mdns > ff02::fb.mdns: 0 [2q] [2n] ANY (QM)? a.b.3.2.2.0.e.f.f.f.8.1.b.d.c.8.0.0.0.0.0.0.0.0.0.0.0.0.0.8.e.f.ip6.arpa. ANY (QM)? NotebookLab-19519.local. (161)
-21:53:15.894360 IP6 NotebookLab > ff02::16: HBH ICMP6, multicast listener report v2, 1 group record(s), length 28
-21:53:15.990410 IP6 NotebookLab > ff02::16: HBH ICMP6, multicast listener report v2, 2 group record(s), length 48
-21:53:16.081422 IP6 NotebookLab.mdns > ff02::fb.mdns: 0 [2q] [2n] ANY (QM)? a.b.3.2.2.0.e.f.f.f.8.1.b.d.c.8.0.0.0.0.0.0.0.0.0.0.0.0.0.8.e.f.ip6.arpa. ANY (QM)? NotebookLab-19519.local. (161)
-21:53:16.331740 IP6 NotebookLab.mdns > ff02::fb.mdns: 0 [2q] [2n] ANY (QM)? a.b.3.2.2.0.e.f.f.f.8.1.b.d.c.8.0.0.0.0.0.0.0.0.0.0.0.0.0.8.e.f.ip6.arpa. ANY (QM)? NotebookLab-19519.local. (161)
-21:53:16.532288 IP6 NotebookLab.mdns > ff02::fb.mdns: 0*- [0q] 2/0/0 (Cache flush) PTR NotebookLab-19519.local., (Cache flush) AAAA fe80::8cdb:18ff:fe02:23ba (149)
-21:53:16.804311 IP6 NotebookLab.mdns > ff02::fb.mdns: 0 [2q] PTR (QM)? _ipps._tcp.local. PTR (QM)? _ipp._tcp.local. (45)
-21:53:17.780791 IP6 NotebookLab.mdns > ff02::fb.mdns: 0*- [0q] 2/0/0 (Cache flush) PTR NotebookLab-19519.local., (Cache flush) AAAA fe80::8cdb:18ff:fe02:23ba (149)
-21:53:18.804641 IP6 NotebookLab.mdns > ff02::fb.mdns: 0 [2q] PTR (QM)? _ipps._tcp.local. PTR (QM)? _ipp._tcp.local. (45)
-21:53:20.029902 IP6 NotebookLab.mdns > ff02::fb.mdns: 0*- [0q] 2/0/0 (Cache flush) PTR NotebookLab-19519.local., (Cache flush) AAAA fe80::8cdb:18ff:fe02:23ba (149)
-21:53:20.118394 IP6 NotebookLab > ip6-allrouters: ICMP6, router solicitation, length 16
-21:53:22.805207 IP6 NotebookLab.mdns > ff02::fb.mdns: 0 [2q] PTR (QM)? _ipps._tcp.local. PTR (QM)? _ipp._tcp.local. (45)
-21:53:26.491538 IP6 NotebookLab.mdns > ff02::fb.mdns: 0*- [0q] 2/0/0 (Cache flush) PTR NotebookLab-19519.local., (Cache flush) AAAA fe80::8cdb:18ff:fe02:23ba (149)
-21:53:26.491776 IP6 NotebookLab.mdns > ff02::fb.mdns: 0*- [0q] 2/0/0 (Cache flush) PTR NotebookLab-19519.local., (Cache flush) AAAA fe80::42:1bff:fe92:b8ad (149)
-21:53:26.491837 IP NotebookLab.mdns > 224.0.0.251.mdns: 0*- [0q] 4/0/0 (Cache flush) PTR NotebookLab-19519.local., (Cache flush) A 10.0.1.1, (Cache flush) PTR NotebookLab-19519.local., (Cache flush) AAAA fe80::42:1bff:fe92:b8ad (196)
-21:53:26.713873 IP6 NotebookLab.mdns > ff02::fb.mdns: 0 [2q] [2n] ANY (QM)? a.b.3.2.2.0.e.f.f.f.8.1.b.d.c.8.0.0.0.0.0.0.0.0.0.0.0.0.0.8.e.f.ip6.arpa. ANY (QM)? NotebookLab-19520.local. (161)
-21:53:26.714083 IP6 NotebookLab.mdns > ff02::fb.mdns: 0 [2q] [2n] ANY (QM)? d.a.8.b.2.9.e.f.f.f.b.1.2.4.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.8.e.f.ip6.arpa. ANY (QM)? NotebookLab-19520.local. (161)
-21:53:26.714126 IP NotebookLab.mdns > 224.0.0.251.mdns: 0 [3q] [4n] ANY (QM)? d.a.8.b.2.9.e.f.f.f.b.1.2.4.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.8.e.f.ip6.arpa. ANY (QM)? NotebookLab-19520.local. ANY (QM)? 1.1.0.10.in-addr.arpa. (214)
-21:53:26.964439 IP6 NotebookLab.mdns > ff02::fb.mdns: 0 [2q] [2n] ANY (QM)? a.b.3.2.2.0.e.f.f.f.8.1.b.d.c.8.0.0.0.0.0.0.0.0.0.0.0.0.0.8.e.f.ip6.arpa. ANY (QM)? NotebookLab-19520.local. (161)
-21:53:26.964659 IP6 NotebookLab.mdns > ff02::fb.mdns: 0 [2q] [2n] ANY (QM)? d.a.8.b.2.9.e.f.f.f.b.1.2.4.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.8.e.f.ip6.arpa. ANY (QM)? NotebookLab-19520.local. (161)
-21:53:26.964701 IP NotebookLab.mdns > 224.0.0.251.mdns: 0 [3q] [4n] ANY (QM)? d.a.8.b.2.9.e.f.f.f.b.1.2.4.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.8.e.f.ip6.arpa. ANY (QM)? NotebookLab-19520.local. ANY (QM)? 1.1.0.10.in-addr.arpa. (214)
-21:53:27.214704 IP6 NotebookLab.mdns > ff02::fb.mdns: 0 [2q] [2n] ANY (QM)? a.b.3.2.2.0.e.f.f.f.8.1.b.d.c.8.0.0.0.0.0.0.0.0.0.0.0.0.0.8.e.f.ip6.arpa. ANY (QM)? NotebookLab-19520.local. (161)
-21:53:27.214902 IP6 NotebookLab.mdns > ff02::fb.mdns: 0 [2q] [2n] ANY (QM)? d.a.8.b.2.9.e.f.f.f.b.1.2.4.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.8.e.f.ip6.arpa. ANY (QM)? NotebookLab-19520.local. (161)
-21:53:27.214942 IP NotebookLab.mdns > 224.0.0.251.mdns: 0 [3q] [4n] ANY (QM)? d.a.8.b.2.9.e.f.f.f.b.1.2.4.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.8.e.f.ip6.arpa. ANY (QM)? NotebookLab-19520.local. ANY (QM)? 1.1.0.10.in-addr.arpa. (214)
-21:53:27.415049 IP6 NotebookLab.mdns > ff02::fb.mdns: 0*- [0q] 2/0/0 (Cache flush) PTR NotebookLab-19520.local., (Cache flush) AAAA fe80::8cdb:18ff:fe02:23ba (149)
-21:53:27.415271 IP NotebookLab.mdns > 224.0.0.251.mdns: 0*- [0q] 4/0/0 (Cache flush) PTR NotebookLab-19520.local., (Cache flush) A 10.0.1.1, (Cache flush) PTR NotebookLab-19520.local., (Cache flush) AAAA fe80::42:1bff:fe92:b8ad (196)
-21:53:27.415309 IP6 NotebookLab.mdns > ff02::fb.mdns: 0*- [0q] 2/0/0 (Cache flush) PTR NotebookLab-19520.local., (Cache flush) AAAA fe80::42:1bff:fe92:b8ad (149)
-21:53:28.587613 IP6 NotebookLab.mdns > ff02::fb.mdns: 0*- [0q] 2/0/0 (Cache flush) PTR NotebookLab-19520.local., (Cache flush) AAAA fe80::8cdb:18ff:fe02:23ba (149)
-21:53:28.587869 IP NotebookLab.mdns > 224.0.0.251.mdns: 0*- [0q] 4/0/0 (Cache flush) PTR NotebookLab-19520.local., (Cache flush) A 10.0.1.1, (Cache flush) PTR NotebookLab-19520.local., (Cache flush) AAAA fe80::42:1bff:fe92:b8ad (196)
-21:53:28.587904 IP6 NotebookLab.mdns > ff02::fb.mdns: 0*- [0q] 2/0/0 (Cache flush) PTR NotebookLab-19520.local., (Cache flush) AAAA fe80::42:1bff:fe92:b8ad (149)
-21:53:28.822440 IP6 NotebookLab > ip6-allrouters: ICMP6, router solicitation, length 16
-21:53:30.643556 ARP, Request who-has 10.0.1.200 tell 10.0.1.2, length 28
-21:53:30.643565 ARP, Reply 10.0.1.200 is-at 02:42:0a:00:01:c8 (oui Unknown), length 28
-21:53:30.643606 IP 10.0.1.2.35338 > 10.0.1.200.5000: Flags [S], seq 835667899, win 64240, options [mss 1460,sackOK,TS val 3163373070 ecr 0,nop,wscale 7], length 0
-21:53:30.643644 IP 10.0.1.200.5000 > 10.0.1.2.35338: Flags [S.], seq 3969224355, ack 835667900, win 65160, options [mss 1460,sackOK,TS val 3652808581 ecr 3163373070,nop,wscale 7], length 0
-21:53:30.643671 IP 10.0.1.2.35338 > 10.0.1.200.5000: Flags [.], ack 1, win 502, options [nop,nop,TS val 3163373070 ecr 3652808581], length 0
-21:53:30.644143 IP 10.0.1.2.35338 > 10.0.1.200.5000: Flags [P.], seq 1:675, ack 1, win 502, options [nop,nop,TS val 3163373070 ecr 3652808581], length 674
-21:53:30.644158 IP 10.0.1.200.5000 > 10.0.1.2.35338: Flags [.], ack 675, win 504, options [nop,nop,TS val 3652808581 ecr 3163373070], length 0
-21:53:30.674216 IP 10.0.1.200.55702 > 10.0.1.2.830: Flags [S], seq 3300690437, win 64240, options [mss 1460,sackOK,TS val 3652808611 ecr 0,nop,wscale 7], length 0
-21:53:30.674309 IP 10.0.1.2.830 > 10.0.1.200.55702: Flags [S.], seq 2247001796, ack 3300690438, win 65160, options [mss 1460,sackOK,TS val 3163373101 ecr 3652808611,nop,wscale 7], length 0
-21:53:30.674326 IP 10.0.1.200.55702 > 10.0.1.2.830: Flags [.], ack 1, win 502, options [nop,nop,TS val 3652808612 ecr 3163373101], length 0
-21:53:30.674839 IP 10.0.1.2.830 > 10.0.1.200.55702: Flags [P.], seq 1:23, ack 1, win 510, options [nop,nop,TS val 3163373101 ecr 3652808612], length 22
-21:53:30.674849 IP 10.0.1.200.55702 > 10.0.1.2.830: Flags [.], ack 23, win 502, options [nop,nop,TS val 3652808612 ecr 3163373101], length 0
-21:53:30.674923 IP 10.0.1.200.55702 > 10.0.1.2.830: Flags [P.], seq 1:25, ack 23, win 502, options [nop,nop,TS val 3652808612 ecr 3163373101], length 24
-21:53:30.674950 IP 10.0.1.2.830 > 10.0.1.200.55702: Flags [.], ack 25, win 510, options [nop,nop,TS val 3163373101 ecr 3652808612], length 0
-21:53:30.675292 IP 10.0.1.2.830 > 10.0.1.200.55702: Flags [P.], seq 23:535, ack 25, win 510, options [nop,nop,TS val 3163373102 ecr 3652808612], length 512
-21:53:30.675298 IP 10.0.1.200.55702 > 10.0.1.2.830: Flags [.], ack 535, win 501, options [nop,nop,TS val 3652808613 ecr 3163373102], length 0
-21:53:30.675454 IP 10.0.1.200.55702 > 10.0.1.2.830: Flags [P.], seq 25:825, ack 535, win 501, options [nop,nop,TS val 3652808613 ecr 3163373102], length 800
-21:53:30.675477 IP 10.0.1.2.830 > 10.0.1.200.55702: Flags [.], ack 825, win 504, options [nop,nop,TS val 3163373102 ecr 3652808613], length 0
-21:53:30.675947 IP 10.0.1.200.55702 > 10.0.1.2.830: Flags [P.], seq 825:873, ack 535, win 501, options [nop,nop,TS val 3652808613 ecr 3163373102], length 48
-21:53:30.675970 IP 10.0.1.2.830 > 10.0.1.200.55702: Flags [.], ack 873, win 504, options [nop,nop,TS val 3163373102 ecr 3652808613], length 0
-21:53:30.698239 IP 10.0.1.2.830 > 10.0.1.200.55702: Flags [P.], seq 535:1655, ack 873, win 504, options [nop,nop,TS val 3163373124 ecr 3652808613], length 1120
-21:53:30.698245 IP 10.0.1.200.55702 > 10.0.1.2.830: Flags [.], ack 1655, win 501, options [nop,nop,TS val 3652808635 ecr 3163373124], length 0
-21:53:30.699183 IP 10.0.1.200.55702 > 10.0.1.2.830: Flags [P.], seq 873:889, ack 1655, win 501, options [nop,nop,TS val 3652808636 ecr 3163373124], length 16
-21:53:30.699516 IP 10.0.1.2.830 > 10.0.1.200.55702: Flags [.], ack 889, win 504, options [nop,nop,TS val 3163373126 ecr 3652808636], length 0
-21:53:30.700419 IP 10.0.1.2.830 > 10.0.1.200.55702: Flags [P.], seq 1655:1671, ack 889, win 504, options [nop,nop,TS val 3163373127 ecr 3652808636], length 16
-21:53:30.700424 IP 10.0.1.200.55702 > 10.0.1.2.830: Flags [.], ack 1671, win 501, options [nop,nop,TS val 3652808638 ecr 3163373127], length 0
-21:53:30.729038 IP 10.0.1.200.55702 > 10.0.1.2.830: Flags [P.], seq 889:953, ack 1671, win 501, options [nop,nop,TS val 3652808666 ecr 3163373127], length 64
-21:53:30.729057 IP 10.0.1.2.830 > 10.0.1.200.55702: Flags [.], ack 953, win 504, options [nop,nop,TS val 3163373155 ecr 3652808666], length 0
-21:53:30.751461 IP 10.0.1.2.830 > 10.0.1.200.55702: Flags [P.], seq 1671:1735, ack 953, win 504, options [nop,nop,TS val 3163373178 ecr 3652808666], length 64
-21:53:30.751467 IP 10.0.1.200.55702 > 10.0.1.2.830: Flags [.], ack 1735, win 501, options [nop,nop,TS val 3652808689 ecr 3163373178], length 0
-21:53:30.758638 IP 10.0.1.200.55702 > 10.0.1.2.830: Flags [P.], seq 953:2121, ack 1735, win 501, options [nop,nop,TS val 3652808696 ecr 3163373178], length 1168
-21:53:30.758656 IP 10.0.1.2.830 > 10.0.1.200.55702: Flags [.], ack 2121, win 501, options [nop,nop,TS val 3163373185 ecr 3652808696], length 0
-21:53:30.759404 IP6 NotebookLab.mdns > ff02::fb.mdns: 0*- [0q] 2/0/0 (Cache flush) PTR NotebookLab-19520.local., (Cache flush) AAAA fe80::8cdb:18ff:fe02:23ba (149)
-21:53:30.759589 IP NotebookLab.mdns > 224.0.0.251.mdns: 0*- [0q] 4/0/0 (Cache flush) PTR NotebookLab-19520.local., (Cache flush) A 10.0.1.1, (Cache flush) PTR NotebookLab-19520.local., (Cache flush) AAAA fe80::42:1bff:fe92:b8ad (196)
-21:53:30.759620 IP6 NotebookLab.mdns > ff02::fb.mdns: 0*- [0q] 2/0/0 (Cache flush) PTR NotebookLab-19520.local., (Cache flush) AAAA fe80::42:1bff:fe92:b8ad (149)
-21:53:30.805114 IP 10.0.1.2.830 > 10.0.1.200.55702: Flags [P.], seq 1735:1783, ack 2121, win 501, options [nop,nop,TS val 3163373231 ecr 3652808696], length 48
-21:53:30.805122 IP 10.0.1.200.55702 > 10.0.1.2.830: Flags [.], ack 1783, win 501, options [nop,nop,TS val 3652808742 ecr 3163373231], length 0
-21:53:30.806467 IP6 NotebookLab.mdns > ff02::fb.mdns: 0 [2q] PTR (QM)? _ipps._tcp.local. PTR (QM)? _ipp._tcp.local. (45)
-21:53:30.829647 IP 10.0.1.200.55702 > 10.0.1.2.830: Flags [P.], seq 2121:2201, ack 1783, win 501, options [nop,nop,TS val 3652808767 ecr 3163373231], length 80
-21:53:30.855838 IP 10.0.1.2.830 > 10.0.1.200.55702: Flags [P.], seq 1783:1847, ack 2201, win 501, options [nop,nop,TS val 3163373282 ecr 3652808767], length 64
-21:53:30.861650 IP 10.0.1.200.55702 > 10.0.1.2.830: Flags [P.], seq 2201:2281, ack 1847, win 501, options [nop,nop,TS val 3652808799 ecr 3163373282], length 80
-21:53:30.902385 IP 10.0.1.2.830 > 10.0.1.200.55702: Flags [.], ack 2281, win 501, options [nop,nop,TS val 3163373329 ecr 3652808799], length 0
-21:53:30.906212 IP 10.0.1.2.830 > 10.0.1.200.55702: Flags [P.], seq 1847:1895, ack 2281, win 501, options [nop,nop,TS val 3163373332 ecr 3652808799], length 48
-21:53:30.906883 IP 10.0.1.2.830 > 10.0.1.200.55702: Flags [P.], seq 1895:4791, ack 2281, win 501, options [nop,nop,TS val 3163373333 ecr 3652808799], length 2896
-21:53:30.906964 IP 10.0.1.200.55702 > 10.0.1.2.830: Flags [.], ack 4791, win 496, options [nop,nop,TS val 3652808844 ecr 3163373332], length 0
-21:53:30.906985 IP 10.0.1.2.830 > 10.0.1.200.55702: Flags [P.], seq 4791:5479, ack 2281, win 501, options [nop,nop,TS val 3163373333 ecr 3652808844], length 688
-21:53:30.908618 IP 10.0.1.200.55702 > 10.0.1.2.830: Flags [P.], seq 2281:3625, ack 5479, win 501, options [nop,nop,TS val 3652808846 ecr 3163373333], length 1344
-21:53:30.909411 IP 10.0.1.2.830 > 10.0.1.200.55702: Flags [P.], seq 5479:5543, ack 3625, win 501, options [nop,nop,TS val 3163373336 ecr 3652808846], length 64
-21:53:30.912696 IP 10.0.1.200.5000 > 10.0.1.2.35338: Flags [P.], seq 1:18, ack 675, win 504, options [nop,nop,TS val 3652808850 ecr 3163373070], length 17
-21:53:30.912733 IP 10.0.1.2.35338 > 10.0.1.200.5000: Flags [.], ack 18, win 502, options [nop,nop,TS val 3163373339 ecr 3652808850], length 0
-21:53:30.912821 IP 10.0.1.200.5000 > 10.0.1.2.35338: Flags [P.], seq 18:58, ack 675, win 504, options [nop,nop,TS val 3652808850 ecr 3163373339], length 40
-21:53:30.912841 IP 10.0.1.2.35338 > 10.0.1.200.5000: Flags [.], ack 58, win 502, options [nop,nop,TS val 3163373339 ecr 3652808850], length 0
-21:53:30.912883 IP 10.0.1.200.5000 > 10.0.1.2.35338: Flags [P.], seq 58:77, ack 675, win 504, options [nop,nop,TS val 3652808850 ecr 3163373339], length 19
-21:53:30.912899 IP 10.0.1.2.35338 > 10.0.1.200.5000: Flags [.], ack 77, win 502, options [nop,nop,TS val 3163373339 ecr 3652808850], length 0
-21:53:30.912958 IP 10.0.1.200.5000 > 10.0.1.2.35338: Flags [P.], seq 77:115, ack 675, win 504, options [nop,nop,TS val 3652808850 ecr 3163373339], length 38
-21:53:30.912997 IP 10.0.1.2.35338 > 10.0.1.200.5000: Flags [.], ack 115, win 502, options [nop,nop,TS val 3163373339 ecr 3652808850], length 0
-21:53:30.913119 IP 10.0.1.200.5000 > 10.0.1.2.35338: Flags [P.], seq 115:152, ack 675, win 504, options [nop,nop,TS val 3652808850 ecr 3163373339], length 37
-21:53:30.913138 IP 10.0.1.2.35338 > 10.0.1.200.5000: Flags [.], ack 152, win 502, options [nop,nop,TS val 3163373339 ecr 3652808850], length 0
-21:53:30.913193 IP 10.0.1.200.5000 > 10.0.1.2.35338: Flags [P.], seq 152:154, ack 675, win 504, options [nop,nop,TS val 3652808850 ecr 3163373339], length 2
-21:53:30.913208 IP 10.0.1.2.35338 > 10.0.1.200.5000: Flags [.], ack 154, win 502, options [nop,nop,TS val 3163373339 ecr 3652808850], length 0
-21:53:30.913237 IP 10.0.1.200.5000 > 10.0.1.2.35338: Flags [P.], seq 154:156, ack 675, win 504, options [nop,nop,TS val 3652808850 ecr 3163373339], length 2
-21:53:30.913251 IP 10.0.1.2.35338 > 10.0.1.200.5000: Flags [.], ack 156, win 502, options [nop,nop,TS val 3163373339 ecr 3652808850], length 0
-21:53:30.913308 IP 10.0.1.2.35338 > 10.0.1.200.5000: Flags [F.], seq 675, ack 156, win 502, options [nop,nop,TS val 3163373340 ecr 3652808850], length 0
-21:53:30.913927 IP 10.0.1.200.5000 > 10.0.1.2.35338: Flags [F.], seq 156, ack 676, win 504, options [nop,nop,TS val 3652808851 ecr 3163373340], length 0
-21:53:30.913964 IP 10.0.1.2.35338 > 10.0.1.200.5000: Flags [.], ack 157, win 502, options [nop,nop,TS val 3163373340 ecr 3652808851], length 0
-21:53:30.950311 IP 10.0.1.200.55702 > 10.0.1.2.830: Flags [.], ack 5543, win 501, options [nop,nop,TS val 3652808888 ecr 3163373336], length 0
-21:53:31.010115 IP 10.0.1.200.55702 > 10.0.1.2.830: Flags [P.], seq 3625:6057, ack 5543, win 501, options [nop,nop,TS val 3652808947 ecr 3163373336], length 2432
-21:53:31.010863 IP 10.0.1.2.830 > 10.0.1.200.55702: Flags [.], ack 6057, win 501, options [nop,nop,TS val 3163373437 ecr 3652808947], length 0
-21:53:31.017604 IP 10.0.1.2.830 > 10.0.1.200.55702: Flags [P.], seq 5543:5607, ack 6057, win 501, options [nop,nop,TS val 3163373444 ecr 3652808947], length 64
-21:53:31.017742 IP 10.0.1.200.55702 > 10.0.1.2.830: Flags [.], ack 5607, win 501, options [nop,nop,TS val 3652808955 ecr 3163373444], length 0
-21:53:31.018200 IP 10.0.1.2.830 > 10.0.1.200.55702: Flags [P.], seq 5607:5895, ack 6057, win 501, options [nop,nop,TS val 3163373444 ecr 3652808955], length 288
-21:53:31.018251 IP 10.0.1.200.55702 > 10.0.1.2.830: Flags [.], ack 5895, win 501, options [nop,nop,TS val 3652808955 ecr 3163373444], length 0
-21:53:31.018550 IP 10.0.1.2.830 > 10.0.1.200.55702: Flags [P.], seq 5895:5959, ack 6057, win 501, options [nop,nop,TS val 3163373445 ecr 3652808955], length 64
-21:53:31.018614 IP 10.0.1.200.55702 > 10.0.1.2.830: Flags [.], ack 5959, win 501, options [nop,nop,TS val 3652808956 ecr 3163373445], length 0
-21:53:33.820615 ARP, Request who-has 10.0.1.200 tell 10.0.1.3, length 28
-21:53:33.820623 ARP, Reply 10.0.1.200 is-at 02:42:0a:00:01:c8 (oui Unknown), length 28
-21:53:33.820643 IP 10.0.1.3.59112 > 10.0.1.200.5000: Flags [S], seq 1703265140, win 64240, options [mss 1460,sackOK,TS val 1896094954 ecr 0,nop,wscale 7], length 0
-21:53:33.820660 IP 10.0.1.200.5000 > 10.0.1.3.59112: Flags [S.], seq 2826287579, ack 1703265141, win 65160, options [mss 1460,sackOK,TS val 3991138001 ecr 1896094954,nop,wscale 7], length 0
-21:53:33.820702 IP 10.0.1.3.59112 > 10.0.1.200.5000: Flags [.], ack 1, win 502, options [nop,nop,TS val 1896094954 ecr 3991138001], length 0
-21:53:33.821040 IP 10.0.1.3.59112 > 10.0.1.200.5000: Flags [P.], seq 1:675, ack 1, win 502, options [nop,nop,TS val 1896094954 ecr 3991138001], length 674
-21:53:33.821049 IP 10.0.1.200.5000 > 10.0.1.3.59112: Flags [.], ack 675, win 504, options [nop,nop,TS val 3991138001 ecr 1896094954], length 0
-21:53:33.850793 IP 10.0.1.200.47030 > 10.0.1.3.830: Flags [S], seq 1930599370, win 64240, options [mss 1460,sackOK,TS val 3991138031 ecr 0,nop,wscale 7], length 0
-21:53:33.850841 IP 10.0.1.3.830 > 10.0.1.200.47030: Flags [S.], seq 2062891300, ack 1930599371, win 65160, options [mss 1460,sackOK,TS val 1896094984 ecr 3991138031,nop,wscale 7], length 0
-21:53:33.850853 IP 10.0.1.200.47030 > 10.0.1.3.830: Flags [.], ack 1, win 502, options [nop,nop,TS val 3991138031 ecr 1896094984], length 0
-21:53:33.851224 IP 10.0.1.3.830 > 10.0.1.200.47030: Flags [P.], seq 1:23, ack 1, win 510, options [nop,nop,TS val 1896094984 ecr 3991138031], length 22
-21:53:33.851283 IP 10.0.1.200.47030 > 10.0.1.3.830: Flags [.], ack 23, win 502, options [nop,nop,TS val 3991138032 ecr 1896094984], length 0
-21:53:33.851890 IP 10.0.1.200.47030 > 10.0.1.3.830: Flags [P.], seq 1:25, ack 23, win 502, options [nop,nop,TS val 3991138032 ecr 1896094984], length 24
-21:53:33.851921 IP 10.0.1.3.830 > 10.0.1.200.47030: Flags [.], ack 25, win 510, options [nop,nop,TS val 1896094985 ecr 3991138032], length 0
-21:53:33.852076 IP 10.0.1.3.830 > 10.0.1.200.47030: Flags [P.], seq 23:535, ack 25, win 510, options [nop,nop,TS val 1896094985 ecr 3991138032], length 512
-21:53:33.852122 IP 10.0.1.200.47030 > 10.0.1.3.830: Flags [.], ack 535, win 498, options [nop,nop,TS val 3991138032 ecr 1896094985], length 0
-21:53:33.852589 IP 10.0.1.200.47030 > 10.0.1.3.830: Flags [P.], seq 25:825, ack 535, win 501, options [nop,nop,TS val 3991138033 ecr 1896094985], length 800
-21:53:33.852625 IP 10.0.1.3.830 > 10.0.1.200.47030: Flags [.], ack 825, win 504, options [nop,nop,TS val 1896094986 ecr 3991138033], length 0
-21:53:33.853235 IP 10.0.1.200.47030 > 10.0.1.3.830: Flags [P.], seq 825:873, ack 535, win 501, options [nop,nop,TS val 3991138033 ecr 1896094986], length 48
-21:53:33.853256 IP 10.0.1.3.830 > 10.0.1.200.47030: Flags [.], ack 873, win 504, options [nop,nop,TS val 1896094986 ecr 3991138033], length 0
-21:53:33.875855 IP 10.0.1.3.830 > 10.0.1.200.47030: Flags [P.], seq 535:1655, ack 873, win 504, options [nop,nop,TS val 1896095009 ecr 3991138033], length 1120
-21:53:33.875863 IP 10.0.1.200.47030 > 10.0.1.3.830: Flags [.], ack 1655, win 501, options [nop,nop,TS val 3991138056 ecr 1896095009], length 0
-21:53:33.876632 IP 10.0.1.200.47030 > 10.0.1.3.830: Flags [P.], seq 873:889, ack 1655, win 501, options [nop,nop,TS val 3991138057 ecr 1896095009], length 16
-21:53:33.876863 IP 10.0.1.3.830 > 10.0.1.200.47030: Flags [.], ack 889, win 504, options [nop,nop,TS val 1896095010 ecr 3991138057], length 0
-21:53:33.877681 IP 10.0.1.3.830 > 10.0.1.200.47030: Flags [P.], seq 1655:1671, ack 889, win 504, options [nop,nop,TS val 1896095011 ecr 3991138057], length 16
-21:53:33.877687 IP 10.0.1.200.47030 > 10.0.1.3.830: Flags [.], ack 1671, win 501, options [nop,nop,TS val 3991138058 ecr 1896095011], length 0
-21:53:33.905202 IP 10.0.1.200.47030 > 10.0.1.3.830: Flags [P.], seq 889:953, ack 1671, win 501, options [nop,nop,TS val 3991138085 ecr 1896095011], length 64
-21:53:33.905222 IP 10.0.1.3.830 > 10.0.1.200.47030: Flags [.], ack 953, win 504, options [nop,nop,TS val 1896095038 ecr 3991138085], length 0
-21:53:33.929120 IP 10.0.1.3.830 > 10.0.1.200.47030: Flags [P.], seq 1671:1735, ack 953, win 504, options [nop,nop,TS val 1896095062 ecr 3991138085], length 64
-21:53:33.929125 IP 10.0.1.200.47030 > 10.0.1.3.830: Flags [.], ack 1735, win 501, options [nop,nop,TS val 3991138109 ecr 1896095062], length 0
-21:53:33.936516 IP 10.0.1.200.47030 > 10.0.1.3.830: Flags [P.], seq 953:2121, ack 1735, win 501, options [nop,nop,TS val 3991138117 ecr 1896095062], length 1168
-21:53:33.936534 IP 10.0.1.3.830 > 10.0.1.200.47030: Flags [.], ack 2121, win 501, options [nop,nop,TS val 1896095070 ecr 3991138117], length 0
-21:53:33.981048 IP 10.0.1.3.830 > 10.0.1.200.47030: Flags [P.], seq 1735:1783, ack 2121, win 501, options [nop,nop,TS val 1896095114 ecr 3991138117], length 48
-21:53:33.981055 IP 10.0.1.200.47030 > 10.0.1.3.830: Flags [.], ack 1783, win 501, options [nop,nop,TS val 3991138161 ecr 1896095114], length 0
-21:53:34.005620 IP 10.0.1.200.47030 > 10.0.1.3.830: Flags [P.], seq 2121:2201, ack 1783, win 501, options [nop,nop,TS val 3991138186 ecr 1896095114], length 80
-21:53:34.005639 IP 10.0.1.3.830 > 10.0.1.200.47030: Flags [.], ack 2201, win 501, options [nop,nop,TS val 1896095139 ecr 3991138186], length 0
-21:53:34.031465 IP 10.0.1.3.830 > 10.0.1.200.47030: Flags [P.], seq 1783:1847, ack 2201, win 501, options [nop,nop,TS val 1896095165 ecr 3991138186], length 64
-21:53:34.037656 IP 10.0.1.200.47030 > 10.0.1.3.830: Flags [P.], seq 2201:2281, ack 1847, win 501, options [nop,nop,TS val 3991138218 ecr 1896095165], length 80
-21:53:34.078408 IP 10.0.1.3.830 > 10.0.1.200.47030: Flags [.], ack 2281, win 501, options [nop,nop,TS val 1896095212 ecr 3991138218], length 0
-21:53:34.082003 IP 10.0.1.3.830 > 10.0.1.200.47030: Flags [P.], seq 1847:1895, ack 2281, win 501, options [nop,nop,TS val 1896095215 ecr 3991138218], length 48
-21:53:34.082860 IP 10.0.1.3.830 > 10.0.1.200.47030: Flags [P.], seq 1895:4791, ack 2281, win 501, options [nop,nop,TS val 1896095216 ecr 3991138218], length 2896
-21:53:34.082943 IP 10.0.1.200.47030 > 10.0.1.3.830: Flags [.], ack 4791, win 496, options [nop,nop,TS val 3991138263 ecr 1896095215], length 0
-21:53:34.082966 IP 10.0.1.3.830 > 10.0.1.200.47030: Flags [P.], seq 4791:5479, ack 2281, win 501, options [nop,nop,TS val 1896095216 ecr 3991138263], length 688
-21:53:34.084670 IP 10.0.1.200.47030 > 10.0.1.3.830: Flags [P.], seq 2281:3625, ack 5479, win 501, options [nop,nop,TS val 3991138265 ecr 1896095216], length 1344
-21:53:34.084813 IP 10.0.1.3.830 > 10.0.1.200.47030: Flags [P.], seq 5479:5543, ack 3625, win 501, options [nop,nop,TS val 1896095218 ecr 3991138265], length 64
-21:53:34.086885 IP 10.0.1.200.5000 > 10.0.1.3.59112: Flags [P.], seq 1:18, ack 675, win 504, options [nop,nop,TS val 3991138267 ecr 1896094954], length 17
-21:53:34.086945 IP 10.0.1.3.59112 > 10.0.1.200.5000: Flags [.], ack 18, win 502, options [nop,nop,TS val 1896095220 ecr 3991138267], length 0
-21:53:34.087062 IP 10.0.1.200.5000 > 10.0.1.3.59112: Flags [P.], seq 18:58, ack 675, win 504, options [nop,nop,TS val 3991138267 ecr 1896095220], length 40
-21:53:34.087108 IP 10.0.1.3.59112 > 10.0.1.200.5000: Flags [.], ack 58, win 502, options [nop,nop,TS val 1896095220 ecr 3991138267], length 0
-21:53:34.087187 IP 10.0.1.200.5000 > 10.0.1.3.59112: Flags [P.], seq 58:77, ack 675, win 504, options [nop,nop,TS val 3991138267 ecr 1896095220], length 19
-21:53:34.087206 IP 10.0.1.3.59112 > 10.0.1.200.5000: Flags [.], ack 77, win 502, options [nop,nop,TS val 1896095220 ecr 3991138267], length 0
-21:53:34.087270 IP 10.0.1.200.5000 > 10.0.1.3.59112: Flags [P.], seq 77:115, ack 675, win 504, options [nop,nop,TS val 3991138268 ecr 1896095220], length 38
-21:53:34.087288 IP 10.0.1.3.59112 > 10.0.1.200.5000: Flags [.], ack 115, win 502, options [nop,nop,TS val 1896095221 ecr 3991138268], length 0
-21:53:34.087341 IP 10.0.1.200.5000 > 10.0.1.3.59112: Flags [P.], seq 115:152, ack 675, win 504, options [nop,nop,TS val 3991138268 ecr 1896095221], length 37
-21:53:34.087358 IP 10.0.1.3.59112 > 10.0.1.200.5000: Flags [.], ack 152, win 502, options [nop,nop,TS val 1896095221 ecr 3991138268], length 0
-21:53:34.087407 IP 10.0.1.200.5000 > 10.0.1.3.59112: Flags [P.], seq 152:154, ack 675, win 504, options [nop,nop,TS val 3991138268 ecr 1896095221], length 2
-21:53:34.087456 IP 10.0.1.3.59112 > 10.0.1.200.5000: Flags [.], ack 154, win 502, options [nop,nop,TS val 1896095221 ecr 3991138268], length 0
-21:53:34.087497 IP 10.0.1.200.5000 > 10.0.1.3.59112: Flags [P.], seq 154:156, ack 675, win 504, options [nop,nop,TS val 3991138268 ecr 1896095221], length 2
-21:53:34.087512 IP 10.0.1.3.59112 > 10.0.1.200.5000: Flags [.], ack 156, win 502, options [nop,nop,TS val 1896095221 ecr 3991138268], length 0
-21:53:34.087571 IP 10.0.1.3.59112 > 10.0.1.200.5000: Flags [F.], seq 675, ack 156, win 502, options [nop,nop,TS val 1896095221 ecr 3991138268], length 0
-21:53:34.088129 IP 10.0.1.200.5000 > 10.0.1.3.59112: Flags [F.], seq 156, ack 676, win 504, options [nop,nop,TS val 3991138268 ecr 1896095221], length 0
-21:53:34.088165 IP 10.0.1.3.59112 > 10.0.1.200.5000: Flags [.], ack 157, win 502, options [nop,nop,TS val 1896095221 ecr 3991138268], length 0
-21:53:34.126350 IP 10.0.1.200.47030 > 10.0.1.3.830: Flags [.], ack 5543, win 501, options [nop,nop,TS val 3991138307 ecr 1896095218], length 0
-21:53:34.185283 IP 10.0.1.200.47030 > 10.0.1.3.830: Flags [P.], seq 3625:6057, ack 5543, win 501, options [nop,nop,TS val 3991138366 ecr 1896095218], length 2432
-21:53:34.186105 IP 10.0.1.3.830 > 10.0.1.200.47030: Flags [.], ack 6057, win 501, options [nop,nop,TS val 1896095319 ecr 3991138366], length 0
-21:53:34.191895 IP 10.0.1.3.830 > 10.0.1.200.47030: Flags [P.], seq 5543:5607, ack 6057, win 501, options [nop,nop,TS val 1896095325 ecr 3991138366], length 64
-21:53:34.191986 IP 10.0.1.200.47030 > 10.0.1.3.830: Flags [.], ack 5607, win 501, options [nop,nop,TS val 3991138372 ecr 1896095325], length 0
-21:53:34.192427 IP 10.0.1.200.47030 > 10.0.1.3.830: Flags [P.], seq 6057:7849, ack 5607, win 501, options [nop,nop,TS val 3991138373 ecr 1896095325], length 1792
-21:53:34.192582 IP 10.0.1.3.830 > 10.0.1.200.47030: Flags [.], ack 7849, win 501, options [nop,nop,TS val 1896095326 ecr 3991138373], length 0
-21:53:34.192644 IP 10.0.1.3.830 > 10.0.1.200.47030: Flags [P.], seq 5607:5895, ack 7849, win 501, options [nop,nop,TS val 1896095326 ecr 3991138373], length 288
-21:53:34.192699 IP 10.0.1.200.47030 > 10.0.1.3.830: Flags [.], ack 5895, win 501, options [nop,nop,TS val 3991138373 ecr 1896095326], length 0
-21:53:34.192954 IP 10.0.1.3.830 > 10.0.1.200.47030: Flags [P.], seq 5895:5959, ack 7849, win 501, options [nop,nop,TS val 1896095326 ecr 3991138373], length 64
-21:53:34.193001 IP 10.0.1.200.47030 > 10.0.1.3.830: Flags [.], ack 5959, win 501, options [nop,nop,TS val 3991138373 ecr 1896095326], length 0
-21:53:34.197958 IP 10.0.1.3.830 > 10.0.1.200.47030: Flags [P.], seq 5959:6023, ack 7849, win 501, options [nop,nop,TS val 1896095331 ecr 3991138373], length 64
-21:53:34.198023 IP 10.0.1.200.47030 > 10.0.1.3.830: Flags [.], ack 6023, win 501, options [nop,nop,TS val 3991138378 ecr 1896095331], length 0
-21:53:34.198387 IP 10.0.1.3.830 > 10.0.1.200.47030: Flags [P.], seq 6023:6311, ack 7849, win 501, options [nop,nop,TS val 1896095332 ecr 3991138378], length 288
-21:53:34.198472 IP 10.0.1.200.47030 > 10.0.1.3.830: Flags [.], ack 6311, win 501, options [nop,nop,TS val 3991138379 ecr 1896095332], length 0
-21:53:34.198822 IP 10.0.1.3.830 > 10.0.1.200.47030: Flags [P.], seq 6311:6375, ack 7849, win 501, options [nop,nop,TS val 1896095332 ecr 3991138379], length 64
-21:53:34.198872 IP 10.0.1.200.47030 > 10.0.1.3.830: Flags [.], ack 6375, win 501, options [nop,nop,TS val 3991138379 ecr 1896095332], length 0
+22:55:32.447055 IP6 NotebookLab.mdns > ff02::fb.mdns: 0 [2q] PTR (QM)? _ipps._tcp.local. PTR (QM)? _ipp._tcp.local. (45)
+22:55:32.613863 IP6 NotebookLab.mdns > ff02::fb.mdns: 0 [2q] [2n] ANY (QM)? a.f.a.5.5.4.e.f.f.f.0.d.5.7.8.5.0.0.0.0.0.0.0.0.0.0.0.0.0.8.e.f.ip6.arpa. ANY (QM)? NotebookLab-19706.local. (161)
+22:55:32.726336 IP6 NotebookLab > ff02::16: HBH ICMP6, multicast listener report v2, 1 group record(s), length 28
+22:55:32.865441 IP6 NotebookLab.mdns > ff02::fb.mdns: 0 [2q] [2n] ANY (QM)? a.f.a.5.5.4.e.f.f.f.0.d.5.7.8.5.0.0.0.0.0.0.0.0.0.0.0.0.0.8.e.f.ip6.arpa. ANY (QM)? NotebookLab-19706.local. (161)
+22:55:33.114310 IP6 NotebookLab > ff02::16: HBH ICMP6, multicast listener report v2, 2 group record(s), length 48
+22:55:33.115168 IP6 NotebookLab.mdns > ff02::fb.mdns: 0 [2q] [2n] ANY (QM)? a.f.a.5.5.4.e.f.f.f.0.d.5.7.8.5.0.0.0.0.0.0.0.0.0.0.0.0.0.8.e.f.ip6.arpa. ANY (QM)? NotebookLab-19706.local. (161)
+22:55:33.299114 IP NotebookLab.mdns > 224.0.0.251.mdns: 0*- [0q] 4/0/0 (Cache flush) PTR NotebookLab-19706.local., (Cache flush) A 10.0.1.1, (Cache flush) PTR NotebookLab-19706.local., (Cache flush) AAAA fe80::42:1bff:fe92:b8ad (196)
+22:55:33.299152 IP6 NotebookLab.mdns > ff02::fb.mdns: 0*- [0q] 2/0/0 (Cache flush) PTR NotebookLab-19706.local., (Cache flush) AAAA fe80::42:1bff:fe92:b8ad (149)
+22:55:33.315904 IP6 NotebookLab.mdns > ff02::fb.mdns: 0*- [0q] 2/0/0 (Cache flush) PTR NotebookLab-19706.local., (Cache flush) AAAA fe80::5875:d0ff:fe45:5afa (149)
+22:55:33.448164 IP6 NotebookLab.mdns > ff02::fb.mdns: 0 [2q] PTR (QM)? _ipps._tcp.local. PTR (QM)? _ipp._tcp.local. (45)
+22:55:34.533257 IP6 NotebookLab.mdns > ff02::fb.mdns: 0*- [0q] 2/0/0 (Cache flush) PTR NotebookLab-19706.local., (Cache flush) AAAA fe80::5875:d0ff:fe45:5afa (149)
+22:55:35.448860 IP6 NotebookLab.mdns > ff02::fb.mdns: 0 [2q] PTR (QM)? _ipps._tcp.local. PTR (QM)? _ipp._tcp.local. (45)
+22:55:36.438808 IP6 NotebookLab > ip6-allrouters: ICMP6, router solicitation, length 16
+22:55:36.750711 IP6 NotebookLab.mdns > ff02::fb.mdns: 0*- [0q] 2/0/0 (Cache flush) PTR NotebookLab-19706.local., (Cache flush) AAAA fe80::5875:d0ff:fe45:5afa (149)
+22:55:39.448542 IP6 NotebookLab.mdns > ff02::fb.mdns: 0 [2q] PTR (QM)? _ipps._tcp.local. PTR (QM)? _ipp._tcp.local. (45)
+22:55:44.118338 IP6 NotebookLab > ip6-allrouters: ICMP6, router solicitation, length 16
+22:55:46.626189 ARP, Request who-has 10.0.1.200 tell 10.0.1.3, length 28
+22:55:46.626195 ARP, Reply 10.0.1.200 is-at 02:42:0a:00:01:c8 (oui Unknown), length 28
+22:55:46.626228 IP 10.0.1.3.59226 > 10.0.1.200.5000: Flags [S], seq 2756023469, win 64240, options [mss 1460,sackOK,TS val 1899827759 ecr 0,nop,wscale 7], length 0
+22:55:46.626341 IP 10.0.1.200.5000 > 10.0.1.3.59226: Flags [S.], seq 4042708667, ack 2756023470, win 65160, options [mss 1460,sackOK,TS val 3994870807 ecr 1899827759,nop,wscale 7], length 0
+22:55:46.626381 IP 10.0.1.3.59226 > 10.0.1.200.5000: Flags [.], ack 1, win 502, options [nop,nop,TS val 1899827760 ecr 3994870807], length 0
+22:55:46.626481 IP 10.0.1.3.59226 > 10.0.1.200.5000: Flags [P.], seq 1:675, ack 1, win 502, options [nop,nop,TS val 1899827760 ecr 3994870807], length 674
+22:55:46.626488 IP 10.0.1.200.5000 > 10.0.1.3.59226: Flags [.], ack 675, win 504, options [nop,nop,TS val 3994870807 ecr 1899827760], length 0
+22:55:46.659044 IP 10.0.1.200.47144 > 10.0.1.3.830: Flags [S], seq 2478832851, win 64240, options [mss 1460,sackOK,TS val 3994870839 ecr 0,nop,wscale 7], length 0
+22:55:46.659124 IP 10.0.1.3.830 > 10.0.1.200.47144: Flags [S.], seq 1298953355, ack 2478832852, win 65160, options [mss 1460,sackOK,TS val 1899827792 ecr 3994870839,nop,wscale 7], length 0
+22:55:46.659137 IP 10.0.1.200.47144 > 10.0.1.3.830: Flags [.], ack 1, win 502, options [nop,nop,TS val 3994870839 ecr 1899827792], length 0
+22:55:46.659539 IP 10.0.1.3.830 > 10.0.1.200.47144: Flags [P.], seq 1:23, ack 1, win 510, options [nop,nop,TS val 1899827793 ecr 3994870839], length 22
+22:55:46.659579 IP 10.0.1.200.47144 > 10.0.1.3.830: Flags [.], ack 23, win 502, options [nop,nop,TS val 3994870840 ecr 1899827793], length 0
+22:55:46.660136 IP 10.0.1.200.47144 > 10.0.1.3.830: Flags [P.], seq 1:25, ack 23, win 502, options [nop,nop,TS val 3994870840 ecr 1899827793], length 24
+22:55:46.660166 IP 10.0.1.3.830 > 10.0.1.200.47144: Flags [.], ack 25, win 510, options [nop,nop,TS val 1899827793 ecr 3994870840], length 0
+22:55:46.660487 IP 10.0.1.3.830 > 10.0.1.200.47144: Flags [P.], seq 23:535, ack 25, win 510, options [nop,nop,TS val 1899827794 ecr 3994870840], length 512
+22:55:46.660494 IP 10.0.1.200.47144 > 10.0.1.3.830: Flags [.], ack 535, win 501, options [nop,nop,TS val 3994870841 ecr 1899827794], length 0
+22:55:46.660658 IP 10.0.1.200.47144 > 10.0.1.3.830: Flags [P.], seq 25:825, ack 535, win 501, options [nop,nop,TS val 3994870841 ecr 1899827794], length 800
+22:55:46.660678 IP 10.0.1.3.830 > 10.0.1.200.47144: Flags [.], ack 825, win 504, options [nop,nop,TS val 1899827794 ecr 3994870841], length 0
+22:55:46.661060 IP 10.0.1.200.47144 > 10.0.1.3.830: Flags [P.], seq 825:873, ack 535, win 501, options [nop,nop,TS val 3994870841 ecr 1899827794], length 48
+22:55:46.661078 IP 10.0.1.3.830 > 10.0.1.200.47144: Flags [.], ack 873, win 504, options [nop,nop,TS val 1899827794 ecr 3994870841], length 0
+22:55:46.683908 IP 10.0.1.3.830 > 10.0.1.200.47144: Flags [P.], seq 535:1655, ack 873, win 504, options [nop,nop,TS val 1899827817 ecr 3994870841], length 1120
+22:55:46.683914 IP 10.0.1.200.47144 > 10.0.1.3.830: Flags [.], ack 1655, win 501, options [nop,nop,TS val 3994870864 ecr 1899827817], length 0
+22:55:46.684673 IP 10.0.1.200.47144 > 10.0.1.3.830: Flags [P.], seq 873:889, ack 1655, win 501, options [nop,nop,TS val 3994870865 ecr 1899827817], length 16
+22:55:46.684970 IP 10.0.1.3.830 > 10.0.1.200.47144: Flags [.], ack 889, win 504, options [nop,nop,TS val 1899827818 ecr 3994870865], length 0
+22:55:46.685801 IP 10.0.1.3.830 > 10.0.1.200.47144: Flags [P.], seq 1655:1671, ack 889, win 504, options [nop,nop,TS val 1899827819 ecr 3994870865], length 16
+22:55:46.685807 IP 10.0.1.200.47144 > 10.0.1.3.830: Flags [.], ack 1671, win 501, options [nop,nop,TS val 3994870866 ecr 1899827819], length 0
+22:55:46.713355 IP 10.0.1.200.47144 > 10.0.1.3.830: Flags [P.], seq 889:953, ack 1671, win 501, options [nop,nop,TS val 3994870894 ecr 1899827819], length 64
+22:55:46.713373 IP 10.0.1.3.830 > 10.0.1.200.47144: Flags [.], ack 953, win 504, options [nop,nop,TS val 1899827847 ecr 3994870894], length 0
+22:55:46.736945 IP 10.0.1.3.830 > 10.0.1.200.47144: Flags [P.], seq 1671:1735, ack 953, win 504, options [nop,nop,TS val 1899827870 ecr 3994870894], length 64
+22:55:46.736951 IP 10.0.1.200.47144 > 10.0.1.3.830: Flags [.], ack 1735, win 501, options [nop,nop,TS val 3994870917 ecr 1899827870], length 0
+22:55:46.744116 IP 10.0.1.200.47144 > 10.0.1.3.830: Flags [P.], seq 953:2121, ack 1735, win 501, options [nop,nop,TS val 3994870924 ecr 1899827870], length 1168
+22:55:46.744134 IP 10.0.1.3.830 > 10.0.1.200.47144: Flags [.], ack 2121, win 501, options [nop,nop,TS val 1899827877 ecr 3994870924], length 0
+22:55:46.787872 IP 10.0.1.3.830 > 10.0.1.200.47144: Flags [P.], seq 1735:1783, ack 2121, win 501, options [nop,nop,TS val 1899827921 ecr 3994870924], length 48
+22:55:46.787883 IP 10.0.1.200.47144 > 10.0.1.3.830: Flags [.], ack 1783, win 501, options [nop,nop,TS val 3994870968 ecr 1899827921], length 0
+22:55:46.813843 IP 10.0.1.200.47144 > 10.0.1.3.830: Flags [P.], seq 2121:2201, ack 1783, win 501, options [nop,nop,TS val 3994870994 ecr 1899827921], length 80
+22:55:46.813863 IP 10.0.1.3.830 > 10.0.1.200.47144: Flags [.], ack 2201, win 501, options [nop,nop,TS val 1899827947 ecr 3994870994], length 0
+22:55:46.838463 IP 10.0.1.3.830 > 10.0.1.200.47144: Flags [P.], seq 1783:1847, ack 2201, win 501, options [nop,nop,TS val 1899827972 ecr 3994870994], length 64
+22:55:46.845597 IP 10.0.1.200.47144 > 10.0.1.3.830: Flags [P.], seq 2201:2281, ack 1847, win 501, options [nop,nop,TS val 3994871026 ecr 1899827972], length 80
+22:55:46.886308 IP 10.0.1.3.830 > 10.0.1.200.47144: Flags [.], ack 2281, win 501, options [nop,nop,TS val 1899828020 ecr 3994871026], length 0
+22:55:46.888833 IP 10.0.1.3.830 > 10.0.1.200.47144: Flags [P.], seq 1847:1895, ack 2281, win 501, options [nop,nop,TS val 1899828022 ecr 3994871026], length 48
+22:55:46.889379 IP 10.0.1.3.830 > 10.0.1.200.47144: Flags [P.], seq 1895:4791, ack 2281, win 501, options [nop,nop,TS val 1899828023 ecr 3994871026], length 2896
+22:55:46.889433 IP 10.0.1.200.47144 > 10.0.1.3.830: Flags [.], ack 4791, win 491, options [nop,nop,TS val 3994871070 ecr 1899828022], length 0
+22:55:46.889452 IP 10.0.1.3.830 > 10.0.1.200.47144: Flags [P.], seq 4791:5479, ack 2281, win 501, options [nop,nop,TS val 1899828023 ecr 3994871070], length 688
+22:55:46.891942 IP 10.0.1.200.47144 > 10.0.1.3.830: Flags [P.], seq 2281:3625, ack 5479, win 501, options [nop,nop,TS val 3994871072 ecr 1899828023], length 1344
+22:55:46.892104 IP 10.0.1.3.830 > 10.0.1.200.47144: Flags [P.], seq 5479:5543, ack 3625, win 501, options [nop,nop,TS val 1899828025 ecr 3994871072], length 64
+22:55:46.893721 IP 10.0.1.200.5000 > 10.0.1.3.59226: Flags [P.], seq 1:18, ack 675, win 504, options [nop,nop,TS val 3994871074 ecr 1899827760], length 17
+22:55:46.893769 IP 10.0.1.3.59226 > 10.0.1.200.5000: Flags [.], ack 18, win 502, options [nop,nop,TS val 1899828027 ecr 3994871074], length 0
+22:55:46.893879 IP 10.0.1.200.5000 > 10.0.1.3.59226: Flags [P.], seq 18:58, ack 675, win 504, options [nop,nop,TS val 3994871074 ecr 1899828027], length 40
+22:55:46.893902 IP 10.0.1.3.59226 > 10.0.1.200.5000: Flags [.], ack 58, win 502, options [nop,nop,TS val 1899828027 ecr 3994871074], length 0
+22:55:46.893946 IP 10.0.1.200.5000 > 10.0.1.3.59226: Flags [P.], seq 58:77, ack 675, win 504, options [nop,nop,TS val 3994871074 ecr 1899828027], length 19
+22:55:46.893964 IP 10.0.1.3.59226 > 10.0.1.200.5000: Flags [.], ack 77, win 502, options [nop,nop,TS val 1899828027 ecr 3994871074], length 0
+22:55:46.894037 IP 10.0.1.200.5000 > 10.0.1.3.59226: Flags [P.], seq 77:115, ack 675, win 504, options [nop,nop,TS val 3994871074 ecr 1899828027], length 38
+22:55:46.894054 IP 10.0.1.3.59226 > 10.0.1.200.5000: Flags [.], ack 115, win 502, options [nop,nop,TS val 1899828027 ecr 3994871074], length 0
+22:55:46.894106 IP 10.0.1.200.5000 > 10.0.1.3.59226: Flags [P.], seq 115:152, ack 675, win 504, options [nop,nop,TS val 3994871074 ecr 1899828027], length 37
+22:55:46.894124 IP 10.0.1.3.59226 > 10.0.1.200.5000: Flags [.], ack 152, win 502, options [nop,nop,TS val 1899828027 ecr 3994871074], length 0
+22:55:46.894157 IP 10.0.1.200.5000 > 10.0.1.3.59226: Flags [P.], seq 152:154, ack 675, win 504, options [nop,nop,TS val 3994871074 ecr 1899828027], length 2
+22:55:46.894189 IP 10.0.1.3.59226 > 10.0.1.200.5000: Flags [.], ack 154, win 502, options [nop,nop,TS val 1899828027 ecr 3994871074], length 0
+22:55:46.894217 IP 10.0.1.200.5000 > 10.0.1.3.59226: Flags [P.], seq 154:156, ack 675, win 504, options [nop,nop,TS val 3994871074 ecr 1899828027], length 2
+22:55:46.894232 IP 10.0.1.3.59226 > 10.0.1.200.5000: Flags [.], ack 156, win 502, options [nop,nop,TS val 1899828027 ecr 3994871074], length 0
+22:55:46.894274 IP 10.0.1.3.59226 > 10.0.1.200.5000: Flags [F.], seq 675, ack 156, win 502, options [nop,nop,TS val 1899828027 ecr 3994871074], length 0
+22:55:46.895037 IP 10.0.1.200.5000 > 10.0.1.3.59226: Flags [F.], seq 156, ack 676, win 504, options [nop,nop,TS val 3994871075 ecr 1899828027], length 0
+22:55:46.895068 IP 10.0.1.3.59226 > 10.0.1.200.5000: Flags [.], ack 157, win 502, options [nop,nop,TS val 1899828028 ecr 3994871075], length 0
+22:55:46.938307 IP 10.0.1.200.47144 > 10.0.1.3.830: Flags [.], ack 5543, win 501, options [nop,nop,TS val 3994871119 ecr 1899828025], length 0
+22:55:46.992695 IP 10.0.1.200.47144 > 10.0.1.3.830: Flags [P.], seq 3625:6057, ack 5543, win 501, options [nop,nop,TS val 3994871173 ecr 1899828025], length 2432
+22:55:46.993293 IP 10.0.1.3.830 > 10.0.1.200.47144: Flags [.], ack 6057, win 501, options [nop,nop,TS val 1899828127 ecr 3994871173], length 0
+22:55:46.999186 IP 10.0.1.3.830 > 10.0.1.200.47144: Flags [P.], seq 5543:5607, ack 6057, win 501, options [nop,nop,TS val 1899828132 ecr 3994871173], length 64
+22:55:46.999281 IP 10.0.1.200.47144 > 10.0.1.3.830: Flags [.], ack 5607, win 501, options [nop,nop,TS val 3994871180 ecr 1899828132], length 0
+22:55:46.999841 IP 10.0.1.3.830 > 10.0.1.200.47144: Flags [P.], seq 5607:5895, ack 6057, win 501, options [nop,nop,TS val 1899828133 ecr 3994871180], length 288
+22:55:46.999916 IP 10.0.1.200.47144 > 10.0.1.3.830: Flags [.], ack 5895, win 501, options [nop,nop,TS val 3994871180 ecr 1899828133], length 0
+22:55:47.000260 IP 10.0.1.3.830 > 10.0.1.200.47144: Flags [P.], seq 5895:5959, ack 6057, win 501, options [nop,nop,TS val 1899828133 ecr 3994871180], length 64
+22:55:47.000314 IP 10.0.1.200.47144 > 10.0.1.3.830: Flags [.], ack 5959, win 501, options [nop,nop,TS val 3994871181 ecr 1899828133], length 0
+22:55:47.449807 IP6 NotebookLab.mdns > ff02::fb.mdns: 0 [2q] PTR (QM)? _ipps._tcp.local. PTR (QM)? _ipp._tcp.local. (45)
+22:55:48.851294 IP6 NotebookLab.mdns > ff02::fb.mdns: 0*- [0q] 2/0/0 (Cache flush) PTR NotebookLab-19706.local., (Cache flush) AAAA fe80::5875:d0ff:fe45:5afa (149)
+22:55:48.851540 IP6 NotebookLab.mdns > ff02::fb.mdns: 0*- [0q] 2/0/0 (Cache flush) PTR NotebookLab-19706.local., (Cache flush) AAAA fe80::42:1bff:fe92:b8ad (149)
+22:55:48.851586 IP NotebookLab.mdns > 224.0.0.251.mdns: 0*- [0q] 4/0/0 (Cache flush) PTR NotebookLab-19706.local., (Cache flush) A 10.0.1.1, (Cache flush) PTR NotebookLab-19706.local., (Cache flush) AAAA fe80::42:1bff:fe92:b8ad (196)
+22:55:49.071772 IP6 NotebookLab.mdns > ff02::fb.mdns: 0 [2q] [2n] ANY (QM)? a.f.a.5.5.4.e.f.f.f.0.d.5.7.8.5.0.0.0.0.0.0.0.0.0.0.0.0.0.8.e.f.ip6.arpa. ANY (QM)? NotebookLab-19707.local. (161)
+22:55:49.072002 IP6 NotebookLab.mdns > ff02::fb.mdns: 0 [2q] [2n] ANY (QM)? d.a.8.b.2.9.e.f.f.f.b.1.2.4.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.8.e.f.ip6.arpa. ANY (QM)? NotebookLab-19707.local. (161)
+22:55:49.072046 IP NotebookLab.mdns > 224.0.0.251.mdns: 0 [3q] [4n] ANY (QM)? d.a.8.b.2.9.e.f.f.f.b.1.2.4.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.8.e.f.ip6.arpa. ANY (QM)? NotebookLab-19707.local. ANY (QM)? 1.1.0.10.in-addr.arpa. (214)
+22:55:49.322575 IP6 NotebookLab.mdns > ff02::fb.mdns: 0 [2q] [2n] ANY (QM)? a.f.a.5.5.4.e.f.f.f.0.d.5.7.8.5.0.0.0.0.0.0.0.0.0.0.0.0.0.8.e.f.ip6.arpa. ANY (QM)? NotebookLab-19707.local. (161)
+22:55:49.322805 IP6 NotebookLab.mdns > ff02::fb.mdns: 0 [2q] [2n] ANY (QM)? d.a.8.b.2.9.e.f.f.f.b.1.2.4.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.8.e.f.ip6.arpa. ANY (QM)? NotebookLab-19707.local. (161)
+22:55:49.322849 IP NotebookLab.mdns > 224.0.0.251.mdns: 0 [3q] [4n] ANY (QM)? d.a.8.b.2.9.e.f.f.f.b.1.2.4.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.8.e.f.ip6.arpa. ANY (QM)? NotebookLab-19707.local. ANY (QM)? 1.1.0.10.in-addr.arpa. (214)
+22:55:49.573765 IP6 NotebookLab.mdns > ff02::fb.mdns: 0 [2q] [2n] ANY (QM)? a.f.a.5.5.4.e.f.f.f.0.d.5.7.8.5.0.0.0.0.0.0.0.0.0.0.0.0.0.8.e.f.ip6.arpa. ANY (QM)? NotebookLab-19707.local. (161)
+22:55:49.574036 IP6 NotebookLab.mdns > ff02::fb.mdns: 0 [2q] [2n] ANY (QM)? d.a.8.b.2.9.e.f.f.f.b.1.2.4.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.8.e.f.ip6.arpa. ANY (QM)? NotebookLab-19707.local. (161)
+22:55:49.574114 IP NotebookLab.mdns > 224.0.0.251.mdns: 0 [3q] [4n] ANY (QM)? d.a.8.b.2.9.e.f.f.f.b.1.2.4.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.8.e.f.ip6.arpa. ANY (QM)? NotebookLab-19707.local. ANY (QM)? 1.1.0.10.in-addr.arpa. (214)
+22:55:49.677683 ARP, Request who-has 10.0.1.200 tell 10.0.1.2, length 28
+22:55:49.677690 ARP, Reply 10.0.1.200 is-at 02:42:0a:00:01:c8 (oui Unknown), length 28
+22:55:49.677727 IP 10.0.1.2.35460 > 10.0.1.200.5000: Flags [S], seq 1585763645, win 64240, options [mss 1460,sackOK,TS val 3167112104 ecr 0,nop,wscale 7], length 0
+22:55:49.677799 IP 10.0.1.200.5000 > 10.0.1.2.35460: Flags [S.], seq 3854764511, ack 1585763646, win 65160, options [mss 1460,sackOK,TS val 3656547615 ecr 3167112104,nop,wscale 7], length 0
+22:55:49.677835 IP 10.0.1.2.35460 > 10.0.1.200.5000: Flags [.], ack 1, win 502, options [nop,nop,TS val 3167112104 ecr 3656547615], length 0
+22:55:49.678294 IP 10.0.1.2.35460 > 10.0.1.200.5000: Flags [P.], seq 1:675, ack 1, win 502, options [nop,nop,TS val 3167112104 ecr 3656547615], length 674
+22:55:49.678324 IP 10.0.1.200.5000 > 10.0.1.2.35460: Flags [.], ack 675, win 504, options [nop,nop,TS val 3656547616 ecr 3167112104], length 0
+22:55:49.707648 IP 10.0.1.200.55824 > 10.0.1.2.830: Flags [S], seq 1055665597, win 64240, options [mss 1460,sackOK,TS val 3656547645 ecr 0,nop,wscale 7], length 0
+22:55:49.707734 IP 10.0.1.2.830 > 10.0.1.200.55824: Flags [S.], seq 2734315956, ack 1055665598, win 65160, options [mss 1460,sackOK,TS val 3167112134 ecr 3656547645,nop,wscale 7], length 0
+22:55:49.707746 IP 10.0.1.200.55824 > 10.0.1.2.830: Flags [.], ack 1, win 502, options [nop,nop,TS val 3656547645 ecr 3167112134], length 0
+22:55:49.708092 IP 10.0.1.2.830 > 10.0.1.200.55824: Flags [P.], seq 1:23, ack 1, win 510, options [nop,nop,TS val 3167112134 ecr 3656547645], length 22
+22:55:49.708132 IP 10.0.1.200.55824 > 10.0.1.2.830: Flags [.], ack 23, win 502, options [nop,nop,TS val 3656547645 ecr 3167112134], length 0
+22:55:49.708581 IP 10.0.1.200.55824 > 10.0.1.2.830: Flags [P.], seq 1:25, ack 23, win 502, options [nop,nop,TS val 3656547646 ecr 3167112134], length 24
+22:55:49.708643 IP 10.0.1.2.830 > 10.0.1.200.55824: Flags [.], ack 25, win 510, options [nop,nop,TS val 3167112135 ecr 3656547646], length 0
+22:55:49.708992 IP 10.0.1.2.830 > 10.0.1.200.55824: Flags [P.], seq 23:535, ack 25, win 510, options [nop,nop,TS val 3167112135 ecr 3656547646], length 512
+22:55:49.708999 IP 10.0.1.200.55824 > 10.0.1.2.830: Flags [.], ack 535, win 501, options [nop,nop,TS val 3656547646 ecr 3167112135], length 0
+22:55:49.709153 IP 10.0.1.200.55824 > 10.0.1.2.830: Flags [P.], seq 25:825, ack 535, win 501, options [nop,nop,TS val 3656547646 ecr 3167112135], length 800
+22:55:49.709173 IP 10.0.1.2.830 > 10.0.1.200.55824: Flags [.], ack 825, win 504, options [nop,nop,TS val 3167112135 ecr 3656547646], length 0
+22:55:49.709539 IP 10.0.1.200.55824 > 10.0.1.2.830: Flags [P.], seq 825:873, ack 535, win 501, options [nop,nop,TS val 3656547647 ecr 3167112135], length 48
+22:55:49.709556 IP 10.0.1.2.830 > 10.0.1.200.55824: Flags [.], ack 873, win 504, options [nop,nop,TS val 3167112136 ecr 3656547647], length 0
+22:55:49.732094 IP 10.0.1.2.830 > 10.0.1.200.55824: Flags [P.], seq 535:1655, ack 873, win 504, options [nop,nop,TS val 3167112158 ecr 3656547647], length 1120
+22:55:49.732100 IP 10.0.1.200.55824 > 10.0.1.2.830: Flags [.], ack 1655, win 501, options [nop,nop,TS val 3656547669 ecr 3167112158], length 0
+22:55:49.732736 IP 10.0.1.200.55824 > 10.0.1.2.830: Flags [P.], seq 873:889, ack 1655, win 501, options [nop,nop,TS val 3656547670 ecr 3167112158], length 16
+22:55:49.733072 IP 10.0.1.2.830 > 10.0.1.200.55824: Flags [.], ack 889, win 504, options [nop,nop,TS val 3167112159 ecr 3656547670], length 0
+22:55:49.733191 IP 10.0.1.2.830 > 10.0.1.200.55824: Flags [P.], seq 1655:1671, ack 889, win 504, options [nop,nop,TS val 3167112159 ecr 3656547670], length 16
+22:55:49.733196 IP 10.0.1.200.55824 > 10.0.1.2.830: Flags [.], ack 1671, win 501, options [nop,nop,TS val 3656547670 ecr 3167112159], length 0
+22:55:49.763568 IP 10.0.1.200.55824 > 10.0.1.2.830: Flags [P.], seq 889:953, ack 1671, win 501, options [nop,nop,TS val 3656547701 ecr 3167112159], length 64
+22:55:49.763605 IP 10.0.1.2.830 > 10.0.1.200.55824: Flags [.], ack 953, win 504, options [nop,nop,TS val 3167112190 ecr 3656547701], length 0
+22:55:49.773685 IP6 NotebookLab.mdns > ff02::fb.mdns: 0*- [0q] 2/0/0 (Cache flush) PTR NotebookLab-19707.local., (Cache flush) AAAA fe80::5875:d0ff:fe45:5afa (149)
+22:55:49.773874 IP NotebookLab.mdns > 224.0.0.251.mdns: 0*- [0q] 4/0/0 (Cache flush) PTR NotebookLab-19707.local., (Cache flush) A 10.0.1.1, (Cache flush) PTR NotebookLab-19707.local., (Cache flush) AAAA fe80::42:1bff:fe92:b8ad (196)
+22:55:49.773907 IP6 NotebookLab.mdns > ff02::fb.mdns: 0*- [0q] 2/0/0 (Cache flush) PTR NotebookLab-19707.local., (Cache flush) AAAA fe80::42:1bff:fe92:b8ad (149)
+22:55:49.784159 IP 10.0.1.2.830 > 10.0.1.200.55824: Flags [P.], seq 1671:1735, ack 953, win 504, options [nop,nop,TS val 3167112210 ecr 3656547701], length 64
+22:55:49.784165 IP 10.0.1.200.55824 > 10.0.1.2.830: Flags [.], ack 1735, win 501, options [nop,nop,TS val 3656547721 ecr 3167112210], length 0
+22:55:49.791364 IP 10.0.1.200.55824 > 10.0.1.2.830: Flags [P.], seq 953:2121, ack 1735, win 501, options [nop,nop,TS val 3656547729 ecr 3167112210], length 1168
+22:55:49.791385 IP 10.0.1.2.830 > 10.0.1.200.55824: Flags [.], ack 2121, win 501, options [nop,nop,TS val 3167112218 ecr 3656547729], length 0
+22:55:49.834632 IP 10.0.1.2.830 > 10.0.1.200.55824: Flags [P.], seq 1735:1783, ack 2121, win 501, options [nop,nop,TS val 3167112261 ecr 3656547729], length 48
+22:55:49.834639 IP 10.0.1.200.55824 > 10.0.1.2.830: Flags [.], ack 1783, win 501, options [nop,nop,TS val 3656547772 ecr 3167112261], length 0
+22:55:49.863996 IP 10.0.1.200.55824 > 10.0.1.2.830: Flags [P.], seq 2121:2201, ack 1783, win 501, options [nop,nop,TS val 3656547801 ecr 3167112261], length 80
+22:55:49.864014 IP 10.0.1.2.830 > 10.0.1.200.55824: Flags [.], ack 2201, win 501, options [nop,nop,TS val 3167112290 ecr 3656547801], length 0
+22:55:49.884873 IP 10.0.1.2.830 > 10.0.1.200.55824: Flags [P.], seq 1783:1847, ack 2201, win 501, options [nop,nop,TS val 3167112311 ecr 3656547801], length 64
+22:55:49.895782 IP 10.0.1.200.55824 > 10.0.1.2.830: Flags [P.], seq 2201:2281, ack 1847, win 501, options [nop,nop,TS val 3656547833 ecr 3167112311], length 80
+22:55:49.935111 IP 10.0.1.2.830 > 10.0.1.200.55824: Flags [P.], seq 1847:1895, ack 2281, win 501, options [nop,nop,TS val 3167112361 ecr 3656547833], length 48
+22:55:49.935614 IP 10.0.1.2.830 > 10.0.1.200.55824: Flags [P.], seq 1895:4791, ack 2281, win 501, options [nop,nop,TS val 3167112362 ecr 3656547833], length 2896
+22:55:49.935650 IP 10.0.1.200.55824 > 10.0.1.2.830: Flags [.], ack 4791, win 496, options [nop,nop,TS val 3656547873 ecr 3167112361], length 0
+22:55:49.935677 IP 10.0.1.2.830 > 10.0.1.200.55824: Flags [P.], seq 4791:5415, ack 2281, win 501, options [nop,nop,TS val 3167112362 ecr 3656547873], length 624
+22:55:49.936606 IP 10.0.1.200.55824 > 10.0.1.2.830: Flags [P.], seq 2281:3625, ack 5415, win 501, options [nop,nop,TS val 3656547874 ecr 3167112362], length 1344
+22:55:49.936665 IP 10.0.1.2.830 > 10.0.1.200.55824: Flags [P.], seq 5415:5479, ack 3625, win 501, options [nop,nop,TS val 3167112363 ecr 3656547874], length 64
+22:55:49.940783 IP 10.0.1.200.5000 > 10.0.1.2.35460: Flags [P.], seq 1:18, ack 675, win 504, options [nop,nop,TS val 3656547878 ecr 3167112104], length 17
+22:55:49.940849 IP 10.0.1.2.35460 > 10.0.1.200.5000: Flags [.], ack 18, win 502, options [nop,nop,TS val 3167112367 ecr 3656547878], length 0
+22:55:49.940954 IP 10.0.1.200.5000 > 10.0.1.2.35460: Flags [P.], seq 18:58, ack 675, win 504, options [nop,nop,TS val 3656547878 ecr 3167112367], length 40
+22:55:49.940973 IP 10.0.1.2.35460 > 10.0.1.200.5000: Flags [.], ack 58, win 502, options [nop,nop,TS val 3167112367 ecr 3656547878], length 0
+22:55:49.941025 IP 10.0.1.200.5000 > 10.0.1.2.35460: Flags [P.], seq 58:77, ack 675, win 504, options [nop,nop,TS val 3656547878 ecr 3167112367], length 19
+22:55:49.941065 IP 10.0.1.2.35460 > 10.0.1.200.5000: Flags [.], ack 77, win 502, options [nop,nop,TS val 3167112367 ecr 3656547878], length 0
+22:55:49.941148 IP 10.0.1.200.5000 > 10.0.1.2.35460: Flags [P.], seq 77:115, ack 675, win 504, options [nop,nop,TS val 3656547878 ecr 3167112367], length 38
+22:55:49.941165 IP 10.0.1.2.35460 > 10.0.1.200.5000: Flags [.], ack 115, win 502, options [nop,nop,TS val 3167112367 ecr 3656547878], length 0
+22:55:49.941229 IP 10.0.1.200.5000 > 10.0.1.2.35460: Flags [P.], seq 115:152, ack 675, win 504, options [nop,nop,TS val 3656547878 ecr 3167112367], length 37
+22:55:49.941245 IP 10.0.1.2.35460 > 10.0.1.200.5000: Flags [.], ack 152, win 502, options [nop,nop,TS val 3167112367 ecr 3656547878], length 0
+22:55:49.941275 IP 10.0.1.200.5000 > 10.0.1.2.35460: Flags [P.], seq 152:154, ack 675, win 504, options [nop,nop,TS val 3656547879 ecr 3167112367], length 2
+22:55:49.941298 IP 10.0.1.2.35460 > 10.0.1.200.5000: Flags [.], ack 154, win 502, options [nop,nop,TS val 3167112368 ecr 3656547879], length 0
+22:55:49.941313 IP 10.0.1.200.5000 > 10.0.1.2.35460: Flags [P.], seq 154:156, ack 675, win 504, options [nop,nop,TS val 3656547879 ecr 3167112368], length 2
+22:55:49.941323 IP 10.0.1.2.35460 > 10.0.1.200.5000: Flags [.], ack 156, win 502, options [nop,nop,TS val 3167112368 ecr 3656547879], length 0
+22:55:49.941369 IP 10.0.1.200.5000 > 10.0.1.2.35460: Flags [F.], seq 156, ack 675, win 504, options [nop,nop,TS val 3656547879 ecr 3167112368], length 0
+22:55:49.941375 IP 10.0.1.2.35460 > 10.0.1.200.5000: Flags [F.], seq 675, ack 156, win 502, options [nop,nop,TS val 3167112368 ecr 3656547879], length 0
+22:55:49.941385 IP 10.0.1.200.5000 > 10.0.1.2.35460: Flags [.], ack 676, win 504, options [nop,nop,TS val 3656547879 ecr 3167112368], length 0
+22:55:49.941399 IP 10.0.1.2.35460 > 10.0.1.200.5000: Flags [.], ack 157, win 502, options [nop,nop,TS val 3167112368 ecr 3656547879], length 0
+22:55:49.978372 IP 10.0.1.200.55824 > 10.0.1.2.830: Flags [.], ack 5479, win 501, options [nop,nop,TS val 3656547916 ecr 3167112363], length 0
+22:55:49.978454 IP 10.0.1.2.830 > 10.0.1.200.55824: Flags [P.], seq 5479:5543, ack 3625, win 501, options [nop,nop,TS val 3167112405 ecr 3656547916], length 64
+22:55:49.978668 IP 10.0.1.200.55824 > 10.0.1.2.830: Flags [.], ack 5543, win 501, options [nop,nop,TS val 3656547916 ecr 3167112405], length 0
+22:55:50.038147 IP 10.0.1.200.55824 > 10.0.1.2.830: Flags [P.], seq 3625:6057, ack 5543, win 501, options [nop,nop,TS val 3656547975 ecr 3167112405], length 2432
+22:55:50.058339 IP 10.0.1.200.55824 > 10.0.1.2.830: Flags [P.], seq 5073:6057, ack 5543, win 501, options [nop,nop,TS val 3656547996 ecr 3167112405], length 984
+22:55:50.058370 IP 10.0.1.2.830 > 10.0.1.200.55824: Flags [.], ack 6057, win 498, options [nop,nop,TS val 3167112485 ecr 3656547975,nop,nop,sack 1 {5073:6057}], length 0
+22:55:50.092174 IP 10.0.1.2.830 > 10.0.1.200.55824: Flags [P.], seq 5543:5607, ack 6057, win 501, options [nop,nop,TS val 3167112518 ecr 3656547975], length 64
+22:55:50.092347 IP 10.0.1.200.55824 > 10.0.1.2.830: Flags [.], ack 5607, win 501, options [nop,nop,TS val 3656548030 ecr 3167112518], length 0
+22:55:50.092375 IP 10.0.1.2.830 > 10.0.1.200.55824: Flags [P.], seq 5607:5959, ack 6057, win 501, options [nop,nop,TS val 3167112519 ecr 3656548030], length 352
+22:55:50.093121 IP 10.0.1.200.55824 > 10.0.1.2.830: Flags [.], ack 5959, win 501, options [nop,nop,TS val 3656548030 ecr 3167112519], length 0
+22:55:50.093269 IP 10.0.1.200.55824 > 10.0.1.2.830: Flags [P.], seq 6057:7849, ack 5959, win 501, options [nop,nop,TS val 3656548030 ecr 3167112519], length 1792
+22:55:50.093289 IP 10.0.1.2.830 > 10.0.1.200.55824: Flags [.], ack 7849, win 500, options [nop,nop,TS val 3167112520 ecr 3656548030], length 0
+22:55:50.146733 IP 10.0.1.2.830 > 10.0.1.200.55824: Flags [P.], seq 5959:6023, ack 7849, win 501, options [nop,nop,TS val 3167112573 ecr 3656548030], length 64
+22:55:50.146878 IP 10.0.1.200.55824 > 10.0.1.2.830: Flags [.], ack 6023, win 501, options [nop,nop,TS val 3656548084 ecr 3167112573], length 0
+22:55:50.146906 IP 10.0.1.2.830 > 10.0.1.200.55824: Flags [P.], seq 6023:6375, ack 7849, win 501, options [nop,nop,TS val 3167112573 ecr 3656548084], length 352
+22:55:50.147645 IP 10.0.1.200.55824 > 10.0.1.2.830: Flags [.], ack 6375, win 501, options [nop,nop,TS val 3656548085 ecr 3167112573], length 0
+22:55:50.944402 IP6 NotebookLab.mdns > ff02::fb.mdns: 0*- [0q] 2/0/0 (Cache flush) PTR NotebookLab-19707.local., (Cache flush) AAAA fe80::5875:d0ff:fe45:5afa (149)
+22:55:50.944629 IP NotebookLab.mdns > 224.0.0.251.mdns: 0*- [0q] 4/0/0 (Cache flush) PTR NotebookLab-19707.local., (Cache flush) A 10.0.1.1, (Cache flush) PTR NotebookLab-19707.local., (Cache flush) AAAA fe80::42:1bff:fe92:b8ad (196)
+22:55:50.944672 IP6 NotebookLab.mdns > ff02::fb.mdns: 0*- [0q] 2/0/0 (Cache flush) PTR NotebookLab-19707.local., (Cache flush) AAAA fe80::42:1bff:fe92:b8ad (149)
+22:55:52.166919 ARP, Request who-has 10.0.1.200 tell 10.0.1.4, length 28
+22:55:52.166927 ARP, Reply 10.0.1.200 is-at 02:42:0a:00:01:c8 (oui Unknown), length 28
+22:55:52.166969 IP 10.0.1.4.41996 > 10.0.1.200.5000: Flags [S], seq 4071879226, win 64240, options [mss 1460,sackOK,TS val 1928148744 ecr 0,nop,wscale 7], length 0
+22:55:52.167030 IP 10.0.1.200.5000 > 10.0.1.4.41996: Flags [S.], seq 2597028699, ack 4071879227, win 65160, options [mss 1460,sackOK,TS val 4152765989 ecr 1928148744,nop,wscale 7], length 0
+22:55:52.167115 IP 10.0.1.4.41996 > 10.0.1.200.5000: Flags [.], ack 1, win 502, options [nop,nop,TS val 1928148744 ecr 4152765989], length 0
+22:55:52.167465 IP 10.0.1.4.41996 > 10.0.1.200.5000: Flags [P.], seq 1:675, ack 1, win 502, options [nop,nop,TS val 1928148745 ecr 4152765989], length 674
+22:55:52.167473 IP 10.0.1.200.5000 > 10.0.1.4.41996: Flags [.], ack 675, win 504, options [nop,nop,TS val 4152765990 ecr 1928148745], length 0
+22:55:52.197128 IP 10.0.1.200.37672 > 10.0.1.4.830: Flags [S], seq 2217131642, win 64240, options [mss 1460,sackOK,TS val 4152766019 ecr 0,nop,wscale 7], length 0
+22:55:52.197211 IP 10.0.1.4.830 > 10.0.1.200.37672: Flags [S.], seq 2700967229, ack 2217131643, win 65160, options [mss 1460,sackOK,TS val 1928148774 ecr 4152766019,nop,wscale 7], length 0
+22:55:52.197225 IP 10.0.1.200.37672 > 10.0.1.4.830: Flags [.], ack 1, win 502, options [nop,nop,TS val 4152766019 ecr 1928148774], length 0
+22:55:52.197670 IP 10.0.1.4.830 > 10.0.1.200.37672: Flags [P.], seq 1:23, ack 1, win 510, options [nop,nop,TS val 1928148775 ecr 4152766019], length 22
+22:55:52.197708 IP 10.0.1.200.37672 > 10.0.1.4.830: Flags [.], ack 23, win 502, options [nop,nop,TS val 4152766020 ecr 1928148775], length 0
+22:55:52.198188 IP 10.0.1.200.37672 > 10.0.1.4.830: Flags [P.], seq 1:25, ack 23, win 502, options [nop,nop,TS val 4152766020 ecr 1928148775], length 24
+22:55:52.198216 IP 10.0.1.4.830 > 10.0.1.200.37672: Flags [.], ack 25, win 510, options [nop,nop,TS val 1928148775 ecr 4152766020], length 0
+22:55:52.198464 IP 10.0.1.4.830 > 10.0.1.200.37672: Flags [P.], seq 23:535, ack 25, win 510, options [nop,nop,TS val 1928148776 ecr 4152766020], length 512
+22:55:52.198473 IP 10.0.1.200.37672 > 10.0.1.4.830: Flags [.], ack 535, win 501, options [nop,nop,TS val 4152766021 ecr 1928148776], length 0
+22:55:52.198723 IP 10.0.1.200.37672 > 10.0.1.4.830: Flags [P.], seq 25:825, ack 535, win 501, options [nop,nop,TS val 4152766021 ecr 1928148776], length 800
+22:55:52.198753 IP 10.0.1.4.830 > 10.0.1.200.37672: Flags [.], ack 825, win 504, options [nop,nop,TS val 1928148776 ecr 4152766021], length 0
+22:55:52.199292 IP 10.0.1.200.37672 > 10.0.1.4.830: Flags [P.], seq 825:873, ack 535, win 501, options [nop,nop,TS val 4152766022 ecr 1928148776], length 48
+22:55:52.199315 IP 10.0.1.4.830 > 10.0.1.200.37672: Flags [.], ack 873, win 504, options [nop,nop,TS val 1928148777 ecr 4152766022], length 0
+22:55:52.222440 IP 10.0.1.4.830 > 10.0.1.200.37672: Flags [P.], seq 535:1655, ack 873, win 504, options [nop,nop,TS val 1928148800 ecr 4152766022], length 1120
+22:55:52.222447 IP 10.0.1.200.37672 > 10.0.1.4.830: Flags [.], ack 1655, win 501, options [nop,nop,TS val 4152766045 ecr 1928148800], length 0
+22:55:52.223162 IP 10.0.1.200.37672 > 10.0.1.4.830: Flags [P.], seq 873:889, ack 1655, win 501, options [nop,nop,TS val 4152766045 ecr 1928148800], length 16
+22:55:52.223383 IP 10.0.1.4.830 > 10.0.1.200.37672: Flags [.], ack 889, win 504, options [nop,nop,TS val 1928148801 ecr 4152766045], length 0
+22:55:52.224256 IP 10.0.1.4.830 > 10.0.1.200.37672: Flags [P.], seq 1655:1671, ack 889, win 504, options [nop,nop,TS val 1928148801 ecr 4152766045], length 16
+22:55:52.224261 IP 10.0.1.200.37672 > 10.0.1.4.830: Flags [.], ack 1671, win 501, options [nop,nop,TS val 4152766046 ecr 1928148801], length 0
+22:55:52.252780 IP 10.0.1.200.37672 > 10.0.1.4.830: Flags [P.], seq 889:953, ack 1671, win 501, options [nop,nop,TS val 4152766075 ecr 1928148801], length 64
+22:55:52.252798 IP 10.0.1.4.830 > 10.0.1.200.37672: Flags [.], ack 953, win 504, options [nop,nop,TS val 1928148830 ecr 4152766075], length 0
+22:55:52.275504 IP 10.0.1.4.830 > 10.0.1.200.37672: Flags [P.], seq 1671:1735, ack 953, win 504, options [nop,nop,TS val 1928148853 ecr 4152766075], length 64
+22:55:52.275514 IP 10.0.1.200.37672 > 10.0.1.4.830: Flags [.], ack 1735, win 501, options [nop,nop,TS val 4152766098 ecr 1928148853], length 0
+22:55:52.282728 IP 10.0.1.200.37672 > 10.0.1.4.830: Flags [P.], seq 953:2121, ack 1735, win 501, options [nop,nop,TS val 4152766105 ecr 1928148853], length 1168
+22:55:52.282746 IP 10.0.1.4.830 > 10.0.1.200.37672: Flags [.], ack 2121, win 501, options [nop,nop,TS val 1928148860 ecr 4152766105], length 0
+22:55:52.326497 IP 10.0.1.4.830 > 10.0.1.200.37672: Flags [P.], seq 1735:1783, ack 2121, win 501, options [nop,nop,TS val 1928148904 ecr 4152766105], length 48
+22:55:52.353249 IP 10.0.1.200.37672 > 10.0.1.4.830: Flags [P.], seq 2121:2201, ack 1783, win 501, options [nop,nop,TS val 4152766175 ecr 1928148904], length 80
+22:55:52.353270 IP 10.0.1.4.830 > 10.0.1.200.37672: Flags [.], ack 2201, win 501, options [nop,nop,TS val 1928148930 ecr 4152766175], length 0
+22:55:52.376856 IP 10.0.1.4.830 > 10.0.1.200.37672: Flags [P.], seq 1783:1847, ack 2201, win 501, options [nop,nop,TS val 1928148954 ecr 4152766175], length 64
+22:55:52.385222 IP 10.0.1.200.37672 > 10.0.1.4.830: Flags [P.], seq 2201:2281, ack 1847, win 501, options [nop,nop,TS val 4152766207 ecr 1928148954], length 80
+22:55:52.426347 IP 10.0.1.4.830 > 10.0.1.200.37672: Flags [.], ack 2281, win 501, options [nop,nop,TS val 1928149004 ecr 4152766207], length 0
+22:55:52.427529 IP 10.0.1.4.830 > 10.0.1.200.37672: Flags [P.], seq 1847:1895, ack 2281, win 501, options [nop,nop,TS val 1928149005 ecr 4152766207], length 48
+22:55:52.428115 IP 10.0.1.4.830 > 10.0.1.200.37672: Flags [P.], seq 1895:4791, ack 2281, win 501, options [nop,nop,TS val 1928149005 ecr 4152766207], length 2896
+22:55:52.428171 IP 10.0.1.200.37672 > 10.0.1.4.830: Flags [.], ack 4791, win 491, options [nop,nop,TS val 4152766250 ecr 1928149005], length 0
+22:55:52.428191 IP 10.0.1.4.830 > 10.0.1.200.37672: Flags [P.], seq 4791:5479, ack 2281, win 501, options [nop,nop,TS val 1928149005 ecr 4152766250], length 688
+22:55:52.430528 IP 10.0.1.200.37672 > 10.0.1.4.830: Flags [P.], seq 2281:3625, ack 5479, win 501, options [nop,nop,TS val 4152766253 ecr 1928149005], length 1344
+22:55:52.430738 IP 10.0.1.4.830 > 10.0.1.200.37672: Flags [P.], seq 5479:5543, ack 3625, win 501, options [nop,nop,TS val 1928149008 ecr 4152766253], length 64
+22:55:52.432265 IP 10.0.1.200.5000 > 10.0.1.4.41996: Flags [P.], seq 1:18, ack 675, win 504, options [nop,nop,TS val 4152766254 ecr 1928148745], length 17
+22:55:52.432300 IP 10.0.1.4.41996 > 10.0.1.200.5000: Flags [.], ack 18, win 502, options [nop,nop,TS val 1928149010 ecr 4152766254], length 0
+22:55:52.432509 IP 10.0.1.200.5000 > 10.0.1.4.41996: Flags [P.], seq 18:58, ack 675, win 504, options [nop,nop,TS val 4152766255 ecr 1928149010], length 40
+22:55:52.432540 IP 10.0.1.4.41996 > 10.0.1.200.5000: Flags [.], ack 58, win 502, options [nop,nop,TS val 1928149010 ecr 4152766255], length 0
+22:55:52.432564 IP 10.0.1.200.5000 > 10.0.1.4.41996: Flags [P.], seq 58:77, ack 675, win 504, options [nop,nop,TS val 4152766255 ecr 1928149010], length 19
+22:55:52.432580 IP 10.0.1.4.41996 > 10.0.1.200.5000: Flags [.], ack 77, win 502, options [nop,nop,TS val 1928149010 ecr 4152766255], length 0
+22:55:52.432618 IP 10.0.1.200.5000 > 10.0.1.4.41996: Flags [P.], seq 77:115, ack 675, win 504, options [nop,nop,TS val 4152766255 ecr 1928149010], length 38
+22:55:52.432636 IP 10.0.1.4.41996 > 10.0.1.200.5000: Flags [.], ack 115, win 502, options [nop,nop,TS val 1928149010 ecr 4152766255], length 0
+22:55:52.432696 IP 10.0.1.200.5000 > 10.0.1.4.41996: Flags [P.], seq 115:152, ack 675, win 504, options [nop,nop,TS val 4152766255 ecr 1928149010], length 37
+22:55:52.432714 IP 10.0.1.4.41996 > 10.0.1.200.5000: Flags [.], ack 152, win 502, options [nop,nop,TS val 1928149010 ecr 4152766255], length 0
+22:55:52.432748 IP 10.0.1.200.5000 > 10.0.1.4.41996: Flags [P.], seq 152:154, ack 675, win 504, options [nop,nop,TS val 4152766255 ecr 1928149010], length 2
+22:55:52.432763 IP 10.0.1.4.41996 > 10.0.1.200.5000: Flags [.], ack 154, win 502, options [nop,nop,TS val 1928149010 ecr 4152766255], length 0
+22:55:52.432792 IP 10.0.1.200.5000 > 10.0.1.4.41996: Flags [P.], seq 154:156, ack 675, win 504, options [nop,nop,TS val 4152766255 ecr 1928149010], length 2
+22:55:52.432843 IP 10.0.1.4.41996 > 10.0.1.200.5000: Flags [.], ack 156, win 502, options [nop,nop,TS val 1928149010 ecr 4152766255], length 0
+22:55:52.432898 IP 10.0.1.4.41996 > 10.0.1.200.5000: Flags [F.], seq 675, ack 156, win 502, options [nop,nop,TS val 1928149010 ecr 4152766255], length 0
+22:55:52.433508 IP 10.0.1.200.5000 > 10.0.1.4.41996: Flags [F.], seq 156, ack 676, win 504, options [nop,nop,TS val 4152766256 ecr 1928149010], length 0
+22:55:52.433598 IP 10.0.1.4.41996 > 10.0.1.200.5000: Flags [.], ack 157, win 502, options [nop,nop,TS val 1928149011 ecr 4152766256], length 0
+22:55:52.478359 IP 10.0.1.200.37672 > 10.0.1.4.830: Flags [.], ack 5543, win 501, options [nop,nop,TS val 4152766301 ecr 1928149008], length 0
+22:55:52.531185 IP 10.0.1.200.37672 > 10.0.1.4.830: Flags [P.], seq 3625:6057, ack 5543, win 501, options [nop,nop,TS val 4152766353 ecr 1928149008], length 2432
+22:55:52.531915 IP 10.0.1.4.830 > 10.0.1.200.37672: Flags [.], ack 6057, win 501, options [nop,nop,TS val 1928149109 ecr 4152766353], length 0
+22:55:52.537844 IP 10.0.1.4.830 > 10.0.1.200.37672: Flags [P.], seq 5543:5607, ack 6057, win 501, options [nop,nop,TS val 1928149115 ecr 4152766353], length 64
+22:55:52.537952 IP 10.0.1.200.37672 > 10.0.1.4.830: Flags [.], ack 5607, win 501, options [nop,nop,TS val 4152766360 ecr 1928149115], length 0
+22:55:52.538440 IP 10.0.1.200.37672 > 10.0.1.4.830: Flags [P.], seq 6057:9257, ack 5607, win 501, options [nop,nop,TS val 4152766361 ecr 1928149115], length 3200
+22:55:52.538550 IP 10.0.1.4.830 > 10.0.1.200.37672: Flags [.], ack 9257, win 501, options [nop,nop,TS val 1928149116 ecr 4152766361], length 0
+22:55:52.538669 IP 10.0.1.4.830 > 10.0.1.200.37672: Flags [P.], seq 5607:5895, ack 9257, win 501, options [nop,nop,TS val 1928149116 ecr 4152766361], length 288
+22:55:52.539930 IP 10.0.1.200.37672 > 10.0.1.4.830: Flags [.], ack 5895, win 501, options [nop,nop,TS val 4152766362 ecr 1928149116], length 0
+22:55:52.539949 IP 10.0.1.4.830 > 10.0.1.200.37672: Flags [P.], seq 5895:5959, ack 9257, win 501, options [nop,nop,TS val 1928149117 ecr 4152766362], length 64
+22:55:52.540119 IP 10.0.1.200.37672 > 10.0.1.4.830: Flags [.], ack 5959, win 501, options [nop,nop,TS val 4152766362 ecr 1928149117], length 0
+22:55:52.545743 IP 10.0.1.4.830 > 10.0.1.200.37672: Flags [P.], seq 5959:6023, ack 9257, win 501, options [nop,nop,TS val 1928149123 ecr 4152766362], length 64
+22:55:52.545814 IP 10.0.1.200.37672 > 10.0.1.4.830: Flags [.], ack 6023, win 501, options [nop,nop,TS val 4152766368 ecr 1928149123], length 0
+22:55:52.546066 IP 10.0.1.4.830 > 10.0.1.200.37672: Flags [P.], seq 6023:6311, ack 9257, win 501, options [nop,nop,TS val 1928149123 ecr 4152766368], length 288
+22:55:52.546220 IP 10.0.1.200.37672 > 10.0.1.4.830: Flags [.], ack 6311, win 501, options [nop,nop,TS val 4152766368 ecr 1928149123], length 0
+22:55:52.546509 IP 10.0.1.4.830 > 10.0.1.200.37672: Flags [P.], seq 6311:6375, ack 9257, win 501, options [nop,nop,TS val 1928149124 ecr 4152766368], length 64
+22:55:52.546707 IP 10.0.1.200.37672 > 10.0.1.4.830: Flags [.], ack 6375, win 501, options [nop,nop,TS val 4152766369 ecr 1928149124], length 0
+22:55:53.116658 IP6 NotebookLab.mdns > ff02::fb.mdns: 0*- [0q] 2/0/0 (Cache flush) PTR NotebookLab-19707.local., (Cache flush) AAAA fe80::5875:d0ff:fe45:5afa (149)
+22:55:53.116867 IP NotebookLab.mdns > 224.0.0.251.mdns: 0*- [0q] 4/0/0 (Cache flush) PTR NotebookLab-19707.local., (Cache flush) A 10.0.1.1, (Cache flush) PTR NotebookLab-19707.local., (Cache flush) AAAA fe80::42:1bff:fe92:b8ad (196)
+22:55:53.116903 IP6 NotebookLab.mdns > ff02::fb.mdns: 0*- [0q] 2/0/0 (Cache flush) PTR NotebookLab-19707.local., (Cache flush) AAAA fe80::42:1bff:fe92:b8ad (149)
+22:55:59.478407 IP6 NotebookLab > ip6-allrouters: ICMP6, router solicitation, length 16

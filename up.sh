@@ -5,7 +5,7 @@ export COMPOSE_HTTP_TIMEOUT=200
 
 
 ### PARAMETERS ###
-number_nodes=2
+number_nodes=3
 #window_time=30
 ### PARAMETERS ###
 

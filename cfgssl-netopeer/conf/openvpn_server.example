@@ -1,0 +1,1 @@
+openvpn --lport 667 --ca /cacert.pem --dh /dh2048.pem --key private-key.pem --cert /servercert.pem --config /server.conf

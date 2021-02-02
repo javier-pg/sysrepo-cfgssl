@@ -1,0 +1,1 @@
+openvpn --remote 192.168.123.2 667 --ca /cacert.pem --dh /dh2048.pem --key private-key.pem --cert /clientcert.pem --config /client.conf
