@@ -41,7 +41,9 @@ def initController():
 
         configureServer(req,nfs.split("-")[0],nfs.split("-")[1])
 
+
         # Set up of TLS associations between all stable nodes #
+
         if num_nsfs > 1:
             servers = []
             for active_nfs in range(0,num_nsfs-1,1):
@@ -58,6 +60,8 @@ def initController():
     app.run(host='0.0.0.0', port=5000)
 
 def configureServer(req, nfs_control, nfs_data):
+
+    # server cert
     cert_req = crypto.load_certificate_request(crypto.FILETYPE_PEM,req)
     cert = createCertificate(cert_req, (cacert, cakey), len(nfs_list), (0, 60 * 60 * 24 * 365 * 10))  # ten years
     server_cert = crypto.dump_certificate(crypto.FILETYPE_PEM, cert).decode('ascii')
@@ -66,12 +70,17 @@ def configureServer(req, nfs_control, nfs_data):
     file_cert.write(server_cert)
     file_cert.close()
 
+    # server cert
+    ca_cert = crypto.dump_certificate(crypto.FILETYPE_PEM, cacert).decode('ascii')
+    ca_cert = ca_cert[ca_cert.find("-----BEGIN CERTIFICATE-----")+28:ca_cert.find("-----END CERTIFICATE-----")-1]
+
     m = manager.connect_ssh(host=nfs_control, port=830, timeout=None, username="javier", password=None, key_filename=None, allow_agent=True, hostkey_verify=True, look_for_keys=True, ssh_config=None)
     m.async_mode = True
     managers[nfs_control] = m
     snippet = etree.tostring(etree.parse("/py-sc/server-conf-autostart.xml"), pretty_print=True)
     #snippet = snippet.replace("SERVER-PRIVATE-KEY",private_key)
     snippet = snippet.replace("SERVER-CERTIFICATE",server_cert)
+    snippet = snippet.replace("CA-CERTIFICATE",ca_cert)
     m.edit_config(target='running', config=snippet, test_option='test-then-set')
 
 def createSA(client_control, client_data, servers):

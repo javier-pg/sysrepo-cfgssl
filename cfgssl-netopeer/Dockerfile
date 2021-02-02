@@ -81,6 +81,13 @@ netopeer-manager add --name cfgssl-client --import /usr/local/etc/netopeer/cfgss
 netopeer-manager add --name cfgssl-client --import /usr/local/etc/netopeer/cfgssl/cfgssl-client/yin_modules/ietf-keystore@2017-10-30.yin && \
 netopeer-manager list
 
+## OpenVPN
+RUN apt-get -y install openvpn
+
+COPY conf/dh2048.pem /dh2048.pem
+COPY conf/client.conf /client.conf
+COPY conf/server.conf /server.conf
+
 COPY conf/id_rsa.pub /root/.ssh/
 COPY conf/id_rsa /root/.ssh/
 RUN cat /root/.ssh/id_rsa > /etc/ssh/ssh_host_rsa_key

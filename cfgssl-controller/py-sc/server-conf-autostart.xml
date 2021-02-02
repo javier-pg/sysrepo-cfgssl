@@ -11,6 +11,16 @@
 			<value>SERVER-CERTIFICATE</value></certificate>
 	</certificates>
 </server-identity>
+<client-auth xmlns="urn:ietf:params:xml:ns:yang:ietf-tls-server">
+	<pinned-ca-certs>
+		<certificates>
+			<certificate>
+				<name>cacertificate</name>
+				<value>CA-CERTIFICATE</value>
+			</certificate>
+		</certificates>
+	</pinned-ca-certs>
+</client-auth>
 <hello-params xmlns="urn:ietf:params:xml:ns:yang:ietf-tls-server">
 	<tls-versions>
 		<tls-version>tlscmn:tls-1.3</tls-version>
