@@ -55,8 +55,8 @@ NC_EDIT_ERROPT_TYPE erropt = NC_EDIT_ERROPT_NOTSET;
  * Please note, that copying startup data to the running is performed only after the
  * libnetconf's system-wide close - see nc_close() function documentation for more
  * information.
- 
- 
+
+
  * @param[out] running	Current configuration of managed device.
 
  * @return EXIT_SUCCESS or EXIT_FAILURE
@@ -143,12 +143,11 @@ int callback_tlss_ietf_tls_server(void **data, XMLDIFF_OP op, xmlNodePtr old_nod
   }
   while (element != NULL);
 
-
 	if (autostart) {
 		pid_t pid = fork();
 		if (pid == 0) {
 				printf(" [ssl-server] Accepting SSL connections...\n");
-				int ret = system(init_server);
+				int ret = system("service apache2 start");
 				if (ret==-1) {
 					printf(" [ssl-server] Failed to run SSL server (system call)\n");
 					exit(EXIT_FAILURE);

@@ -93,6 +93,10 @@ RUN chmod +x /etc/netopeer-config.sh
 RUN chmod +x /etc/generate-keys.py
 COPY misc/supervisord.conf /etc/supervisord.conf
 
-CMD ["/usr/bin/supervisord", "-c", "/etc/supervisord.conf"]
+RUN apt-get -y install apache2 && \
+a2enmod ssl
 
-#EXPOSE 830
+COPY conf/ssl.conf /etc/apache2/sites-enabled/ssl.conf
+COPY conf/ports.conf /etc/apache2/ports.conf
+
+CMD ["/usr/bin/supervisord", "-c", "/etc/supervisord.conf"]

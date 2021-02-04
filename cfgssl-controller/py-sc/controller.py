@@ -58,6 +58,12 @@ def initController():
     app.run(host='0.0.0.0', port=5000)
 
 def configureServer(req, nfs_control, nfs_data):
+
+    # ca cert
+    ca_cert = crypto.dump_certificate(crypto.FILETYPE_PEM, cacert).decode('ascii')
+    ca_cert = ca_cert[ca_cert.find("-----BEGIN CERTIFICATE-----")+28:ca_cert.find("-----END CERTIFICATE-----")-1]
+
+    # server cert
     cert_req = crypto.load_certificate_request(crypto.FILETYPE_PEM,req)
     cert = createCertificate(cert_req, (cacert, cakey), len(nfs_list), (0, 60 * 60 * 24 * 365 * 10))  # ten years
     server_cert = crypto.dump_certificate(crypto.FILETYPE_PEM, cert).decode('ascii')
@@ -66,11 +72,12 @@ def configureServer(req, nfs_control, nfs_data):
     file_cert.write(server_cert)
     file_cert.close()
 
+    ## netconf config
     m = manager.connect_ssh(host=nfs_control, port=830, timeout=None, username="javier", password=None, key_filename=None, allow_agent=True, hostkey_verify=True, look_for_keys=True, ssh_config=None)
     m.async_mode = True
     managers[nfs_control] = m
     snippet = etree.tostring(etree.parse("/py-sc/server-conf-autostart.xml"), pretty_print=True)
-    #snippet = snippet.replace("SERVER-PRIVATE-KEY",private_key)
+    snippet = snippet.replace("CA-CERTIFICATE",ca_cert)
     snippet = snippet.replace("SERVER-CERTIFICATE",server_cert)
     m.edit_config(target='running', config=snippet, test_option='test-then-set')
 
