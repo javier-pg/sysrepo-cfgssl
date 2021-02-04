@@ -1,4 +1,4 @@
 # sysrepo-cfgssl
-Mesh scenario for SDN-based TLS management framework
+Scenario for SDN-based VPN management framework
 
-TLS servers based on OpenVPN
+VPNs in triangular network, launched with OpenVPN

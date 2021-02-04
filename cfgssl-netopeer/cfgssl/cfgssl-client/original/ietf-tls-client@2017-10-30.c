@@ -168,7 +168,7 @@ int callback_tlsc_ietf_client_configurations(void **data, XMLDIFF_OP op, xmlNode
 	char* node_content;
 	int measure = 0;
 	char init_connection[500];
-	strcpy(init_connection, "echo Q | openssl s_client");
+	strcpy(init_connection, "openvpn");
 
 	do {
 		node_name = element->name;
@@ -195,6 +195,7 @@ int callback_tlsc_ietf_client_configurations(void **data, XMLDIFF_OP op, xmlNode
 	//    send_log();
 	// }
 
+	strcat(init_connection, " --config /client.conf");
 
 	pid_t pid = fork();
 

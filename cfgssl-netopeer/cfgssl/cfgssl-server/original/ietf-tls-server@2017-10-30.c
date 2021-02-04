@@ -55,8 +55,8 @@ NC_EDIT_ERROPT_TYPE erropt = NC_EDIT_ERROPT_NOTSET;
  * Please note, that copying startup data to the running is performed only after the
  * libnetconf's system-wide close - see nc_close() function documentation for more
  * information.
- 
- 
+
+
  * @param[out] running	Current configuration of managed device.
 
  * @return EXIT_SUCCESS or EXIT_FAILURE
@@ -121,7 +121,7 @@ int callback_tlss_ietf_tls_server(void **data, XMLDIFF_OP op, xmlNodePtr old_nod
 	char* node_content;
  	int autostart = 1;
 	char init_server[500];
-	strcpy(init_server, "openssl s_server -Verify 2");
+	strcpy(init_server, "openvpn");
 
   do {
 		node_name = element->name;
@@ -143,6 +143,7 @@ int callback_tlss_ietf_tls_server(void **data, XMLDIFF_OP op, xmlNodePtr old_nod
   }
   while (element != NULL);
 
+  strcat(init_server, " --config /server.conf");
 
 	if (autostart) {
 		pid_t pid = fork();

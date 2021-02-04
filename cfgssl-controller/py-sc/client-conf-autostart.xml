@@ -6,7 +6,7 @@
 	<server-address>SERVER-ADDRESS</server-address>
 	<auto-start>LAST-NSF-FLAG</auto-start>
 </connection-info>
-<client-identity>
+<client-identity xmlns="urn:ietf:params:xml:ns:yang:ietf-tls-client">
 <certificate>
 	<algorithm>ks:rsa1024</algorithm>
 	<certificates><certificate>
@@ -15,7 +15,17 @@
 	</certificates>
 </certificate>
 </client-identity>
-<hello-params>
+<server-auth xmlns="urn:ietf:params:xml:ns:yang:ietf-tls-client">
+	<pinned-ca-certs>
+		<certificates>
+			<certificate>
+				<name>cacertificate</name>
+				<value>CA-CERTIFICATE</value>
+			</certificate>
+		</certificates>
+	</pinned-ca-certs>
+</server-auth>
+<hello-params xmlns="urn:ietf:params:xml:ns:yang:ietf-tls-client">
 	<tls-versions>
 		<tls-version>tlscmn:tls-1.3</tls-version>
 		<tls-version>tlscmn:tls-1.1</tls-version>

@@ -27,7 +27,6 @@ services:
     networks:
       - sdn_control
       - sdn_data
-    #  - vpn_network
 networks:
   sdn_control:
     driver: bridge
@@ -43,10 +42,3 @@ networks:
        - subnet: 192.168.123.0/24
     driver_opts:
      com.docker.network.bridge.name: sdn_data
-#  vpn_network:
-#    driver: bridge
-#    ipam:
-#     config:
-#       - subnet: 172.16.1.0/24
-#    driver_opts:
-#     com.docker.network.bridge.name: vpn_network

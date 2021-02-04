@@ -33,7 +33,7 @@ int handle_connection_info(xmlNodePtr node, char* init_server) {
     /////  SERVER-PORT NODE  //////
     if (is_equal(node_name,"server-port")) {
       printf(" [server-info] server-port = %s loaded\n",node_content);
-      strcat(init_server, " -accept ");
+      strcat(init_server, " --lport ");
       strcat(init_server,node_content);
     }
     /////   AUTO-START NODE  //////
@@ -178,14 +178,14 @@ int handle_server_identity(xmlNodePtr node, char *init_server) {
     /////   CERTIFICATE (list) NODE  //////
     if (is_equal(node_name,"certificates")) {
         if (handle_server_certificates(node)==EXIT_SUCCESS)
-          strcat(init_server, " -cert servercert.pem");    // CARGAREMOS SOLO UNO
+          strcat(init_server, " --cert /servercert.pem");    // CARGAREMOS SOLO UNO
     }
 
     node = node->next;
 
   } while (node != NULL);
 
-  strcat(init_server, " -key private-key.pem");
+  strcat(init_server, " --key /private-key.pem");
   return EXIT_SUCCESS;
 }
 
@@ -269,7 +269,7 @@ int handle_client_auth(xmlNodePtr node, char *init_server) {
         /////   CERTIFICATE LIST //////
         if (is_equal(node_name,"certificates")) {
           if (handle_ca_certificates(node) == EXIT_SUCCESS) {
-            strcat(init_server, " -CAfile cacert.pem");
+            strcat(init_server, " --ca /cacert.pem");
           }
         }
       }
@@ -317,7 +317,7 @@ int handle_hello_params(xmlNodePtr node, char *init_server) {
         node_content = xmlNodeGetContent(node);
         if (is_equal(node_content, "tlscmn:ecdhe-rsa-with-aes-256-gcm-sha384")) {
           printf(" [hello-params] %s cipher suite will be used\n", node_content);
-          strcat(init_server, " -cipher ECDHE -ciphersuites \"TLS_AES_256_GCM_SHA384\"");
+          //strcat(init_server, " -cipher ECDHE -ciphersuites \"TLS_AES_256_GCM_SHA384\"");
         }
         else {
           printf(" [hello-params] %s cipher suite is not implemented\n", node_content);
