@@ -8,6 +8,8 @@ RUN pip install bcrypt==3.1.7
 RUN pip install paramiko==2.5.0
 RUN pip install ncclient==0.6.3
 
+RUN apt-get -y install netcat
+
 COPY conf/id_rsa.pub /root/.ssh/
 COPY conf/id_rsa /root/.ssh/
 
@@ -17,4 +19,4 @@ RUN echo "    StrictHostKeyChecking no" >> /etc/ssh/ssh_config
 COPY misc/supervisord.conf /etc/supervisord.conf
 CMD ["/usr/bin/supervisord", "-c", "/etc/supervisord.conf"]
 
-#EXPOSE 830
+HEALTHCHECK --interval=10s --timeout=3s --start-period=10s --retries=3 CMD nc -z localhost 5000

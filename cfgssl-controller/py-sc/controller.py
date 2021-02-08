@@ -34,6 +34,7 @@ def initController():
         nfs_list.append(nfs)
         num_nsfs = len(nfs_list)
 
+
         nfs_ssh_key = ssh_key.replace("CONTROL-IP",content['control_network_ip'])
         ssh_key_file = open("/root/.ssh/known_hosts","a")
         ssh_key_file.write(nfs_ssh_key+"\n")

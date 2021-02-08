@@ -100,3 +100,5 @@ COPY conf/ssl.conf /etc/apache2/sites-enabled/ssl.conf
 COPY conf/ports.conf /etc/apache2/ports.conf
 
 CMD ["/usr/bin/supervisord", "-c", "/etc/supervisord.conf"]
+
+HEALTHCHECK --interval=10s --timeout=3s --start-period=3s --retries=3 CMD nc -z localhost 830
