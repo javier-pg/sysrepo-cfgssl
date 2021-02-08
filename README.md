@@ -13,7 +13,7 @@ Requirements:
 * ```docker-compose```
 
 
-#### Mesh network
+### Mesh network
 
 1. Execute the script ```mesh.sh```:
 ```
@@ -22,5 +22,5 @@ sudo ./mesh.sh number_nodes number_experiments
 * ```number_nodes```: Number of nodes of the mesh
 * ```number_experiments```: Number of experiments to launch
 
-2. Experimental data is generated in ```experimental_data/mesh``` folder as follows:
-* ```service_times.csv```: Time for controller to configure the mesh network. Each line presents a experiment, and columns reflect the number of nodes and associated configuration time in seconds.
+2. Experimental measurements are generated in ```experimental_data``` folder as follows:
+* ```mesh_times.txt```: Time for controller to configure the mesh network of nodes. Each line presents a experiment, the first column reflects the number of nodes, the second column presents the associated configuration time (in seconds).
