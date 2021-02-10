@@ -10,10 +10,11 @@ containers=()
 for round in `seq 1 $number_experiments`;
 do
 	echo "Experiment $round..."
+
+	echo "Launching containers..."
 	docker-compose up -d --build --scale netopeer=$number_nodes
 
 	# wait until controller and nodes are running
-	echo "Launching containers..."
 	running=-1
 	while (($running < $(($number_nodes + 1))))
 	do
@@ -29,25 +30,30 @@ do
 		controller=$(docker-compose ps | head -n+3 | tail -n1 | cut -d" " -f1)
 	fi
 
-	echo "Launching mesh configuration..."
 	# launch mesh configuration
-	for nsf in `seq 0 $(($number_nodes + -1))`;
+	echo "Registering nodes..."
+
+	for nsf in `seq 0 $(($number_nodes - 1))`;
 	do
-		docker exec -dt ${containers[$nsf]} /etc/netopeer-config.sh
+		docker exec ${containers[$nsf]} /etc/register.sh
 	done
 
-	sleep 20 # need to be improved, for example, check when all nsfs have been completely configured
-	echo "Launching mesh configuration... DONE"
+	echo "Registering nodes... DONE"
 
+	echo "Configuring mesh..."
 
-# calculate the time for mesh configuration
+	docker exec $controller /etc/configure_mesh.sh
+
+	echo "Configuring mesh... DONE"
+
+	# calculate the time for mesh configuratio
 	echo "Measuring times..."
 	docker cp $controller:/capture.pcap .
 
 	tcpdump -r capture.pcap > capture.txt
 
-	first_message=$(cat capture.txt | grep "10.0.1.200.* > 10.0.1.*.830" | head -n 1) # first NETCONF message to NSF
-	last_message=$(cat capture.txt | grep "10.0.1.200.* > 10.0.1.*.830" | tail -n 1)   # last ack from controller to NSF
+	first_message=$(cat capture.txt | grep -E "10\.0\.1\.200\.[0-9]+ > 10\.0\.1\.[0-9]+\.830" | head -n1 ) # first NETCONF message to NSF
+	last_message=$(cat capture.txt | grep -E "10\.0\.1\.[0-9]+\.830 > 10\.0\.1\.200\.[0-9]+" | tail -n1 )   # last ack from controller to NSF
 
 	begin_time=$(echo $first_message | cut -d" " -f1)
 	b_hours=$(echo $begin_time | cut -d":" -f1)
@@ -66,7 +72,7 @@ do
 	echo $number_nodes";"$duration >> "./experimental_data/"mesh_times.txt
 	echo "Measuring times...DONE"
 
-	rm capture.pcap capture.txt
+	rm capture.txt capture.pcap
 
 	echo "Stopping containers..."
 	docker-compose stop
@@ -79,5 +85,3 @@ do
 	echo "Stopping containers... OK"
 
 done
-
-echo "Experiments finished"

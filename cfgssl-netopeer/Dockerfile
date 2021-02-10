@@ -87,10 +87,12 @@ RUN cat /root/.ssh/id_rsa > /etc/ssh/ssh_host_rsa_key
 COPY conf/startup-config.xml /usr/local/etc/netopeer/cfgnetopeer/datastore.xml
 COPY conf/startup-acm-config.xml /var/lib/libnetconf/datastore-acm.xml
 
-COPY misc/netopeer-config.sh /etc/netopeer-config.sh
+
+COPY misc/register.sh /etc/register.sh
 COPY misc/generate-keys.py /etc/generate-keys.py
-RUN chmod +x /etc/netopeer-config.sh
+RUN chmod +x /etc/register.sh
 RUN chmod +x /etc/generate-keys.py
+
 COPY misc/supervisord.conf /etc/supervisord.conf
 
 RUN apt-get -y install apache2 && \
@@ -101,4 +103,4 @@ COPY conf/ports.conf /etc/apache2/ports.conf
 
 CMD ["/usr/bin/supervisord", "-c", "/etc/supervisord.conf"]
 
-HEALTHCHECK --interval=10s --timeout=3s --start-period=3s --retries=3 CMD nc -z localhost 830
+HEALTHCHECK --interval=5s --timeout=3s --start-period=3s --retries=3 CMD nc -z localhost 830
