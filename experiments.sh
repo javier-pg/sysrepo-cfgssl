@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # experiment parameters
-max_mesh_size=20
-number_experiments_per_mesh=10
+max_mesh_size=40
+number_experiments_per_mesh=100
 
 echo "Running $number_experiments experiments for each mesh network, from 2 node to $max_mesh_size nodes"
 
