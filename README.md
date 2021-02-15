@@ -31,8 +31,7 @@ max_mesh_size=X
 number_experiments_per_mesh=Y
 ```
 
-  and execute to configure mesh networks from ```2``` nodes to ```X``` nodes, ```Y``` times each one:
+4. And execute to configure mesh networks from ```2``` nodes to ```X``` nodes, ```Y``` times each one (experimental data is also saved in ```/experimental_data/mesh_times.txt```):
 ```bash
 sudo ./mesh.sh
 ```
-  experimental data is also saved in ```/experimental_data/mesh_times.txt```.
