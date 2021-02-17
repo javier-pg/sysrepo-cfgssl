@@ -7,6 +7,8 @@ RUN pip install pyopenssl
 RUN pip install bcrypt==3.1.7
 RUN pip install paramiko==2.5.0
 RUN pip install ncclient==0.6.3
+RUN pip install futures
+
 
 RUN apt-get -y install netcat
 

@@ -10,10 +10,15 @@ from OpenSSL import crypto
 from ca import createKeyPair, createCertRequest, createCertificate
 import time
 import logging
+from concurrent.futures.thread import ThreadPoolExecutor
+
+PARALLEL = True
 
 ssh_key = "[CONTROL-IP]:830 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDAUb9OmnZqSFZyjvGhIDsaxPfq7KjUQaXvhr/DoqDG7kXWBWeT45ndFOiQzF/PGVGXQULA02SZjjYwbelnmDKHxXRaj4QCG+y/U3x5iFBrtCk3/PklQC8mj8LdWaP2M3aDlTtDYgiA66zQw3d70rlel4gioBrPly+bYo6h/LqQDx1gThmshIWyKkwyhLRQCfscHCZ6g7LEuNk00LWr6GfNcokKzyKiX+HrP0ecg+C2++hiNb9YgJq444Qz5Lh2kIVgFAd7d0ZOmfDOV7Ych5iEZIKkOZG9pm47b8KVVI3/n+AQzCXHgBPOdjaOGxiFxRHsWGGatd2ohNXi6f9HUop0TFIJxZ8Jf/Bu4hQL3tRG/593SX6vQwWg+y0Lc7EzXjVjVWVUeIZ8FJvwv5B/HSDN1O2rL+TP8Z6JnvVzMIExi0wYMVZmZ+XwOUxgQEQIFJ2s11E3EyhxD5P1TAS8rY6YePgOp/rdA9xMbsSTcW1TXZFc8RdzCGxSquwQERrDGBHIYpv1s/RTKbQ+pGwduLVwjWfh4kFn0Pk1VCGa2mGj6zdk1YxD6g9kZaaJXASBvesp3+l+fEVTGioAjhzugb+vyV1zPY63n7wPWSru8VEm4GhUKb17Z95sbMtF8YV5Ga1FQg83RvcqRL0DKxaAQ1JpNMHokm9a/SEssAthZFWxCQ=="
 
 netconf_sessions = {}
+node_certs = {}
+
 registered_nodes = []
 cakey = createKeyPair(crypto.TYPE_RSA,1024)
 careq = createCertRequest(cakey, CN="Certificate Authority")
@@ -51,9 +56,7 @@ def initController():
         cert = createCertificate(cert_req, (cacert, cakey), len(registered_nodes), (0, 60 * 60 * 24 * 365 * 10))  # ten years
         node_cert = crypto.dump_certificate(crypto.FILETYPE_PEM, cert).decode('ascii')
         node_cert = node_cert[node_cert.find("-----BEGIN CERTIFICATE-----")+28:node_cert.find("-----END CERTIFICATE-----")-1]
-        file_cert = open("/tmp/cert."+control_address+".pem","w")
-        file_cert.write(node_cert)
-        file_cert.close()
+        node_certs[control_address] = node_cert
 
         registered_nodes.append((control_address,data_address))
         return 'OK'
@@ -64,73 +67,81 @@ def initController():
 
         num_nodes = len(registered_nodes)
 
-        # configuration of nodes
-        for registered_node in range(0,num_nodes,1):
+        if PARALLEL:
+            # server configuration of nodes
+            with ThreadPoolExecutor(max_workers=len(registered_nodes)) as executor:
+                for registered_node in range(0,num_nodes,1):
+                    executor.submit(configureServer, registered_node)
 
-            control_address = registered_nodes[registered_node][0]
-            data_address = registered_nodes[registered_node][1]
-            # load cert of node #
-            fd = open("/tmp/cert."+control_address+".pem","r")
-            node_cert = fd.read()
-            fd.close()
-
-            netconf_sessions[control_address] = manager.connect_ssh(host=control_address,
-                                                                    port=830,
-                                                                    timeout=None,
-                                                                    username="javier",
-                                                                    password=None,
-                                                                    key_filename=None,
-                                                                    allow_agent=True,
-                                                                    hostkey_verify=True,
-                                                                    look_for_keys=True,
-                                                                    ssh_config=None)
-
-            configureServer(node_cert,control_address)
-
-            # set up of TLS associations between all stable nodes #
-            if registered_node > 0:
-                servers = []
-                for server in range(0,registered_node,1):
-                    servers.append(registered_nodes[server][1])
-                createSA(node_cert,control_address,servers)
-
-            # new node completely configured
-            netconf_sessions[control_address].close_session()
+            # client configuration of nodes
+            with ThreadPoolExecutor(max_workers=len(registered_nodes)) as executor:
+                for registered_node in range(0,num_nodes,1):
+                    executor.submit(createSAs, registered_node)
+        else:
+            for registered_node in range(0,num_nodes,1):
+                configureServer(registered_node)
+            for registered_node in range(0,num_nodes,1):
+                createSAs(registered_node)
 
         return 'OK'
 
-    def configureServer(node_cert, control_address):
+    def configureServer(registered_node):
+        control_address = registered_nodes[registered_node][0]
+
         snippet = etree.tostring(etree.parse("/py-sc/server-conf-autostart.xml"), pretty_print=True)
         snippet = snippet.replace("CA-CERTIFICATE",ca_cert)
-        snippet = snippet.replace("SERVER-CERTIFICATE",node_cert)
+        snippet = snippet.replace("SERVER-CERTIFICATE",node_certs[control_address])
+
+        netconf_sessions[control_address] = manager.connect_ssh(host=control_address,
+                                                                port=830,
+                                                                timeout=None,
+                                                                username="javier",
+                                                                password=None,
+                                                                key_filename=None,
+                                                                allow_agent=True,
+                                                                hostkey_verify=True,
+                                                                look_for_keys=True,
+                                                                ssh_config=None)
         netconf_sessions[control_address].edit_config(target='running', config=snippet, test_option='test-then-set')
 
 
-    def createSA(node_cert, control_address, servers):
+    def createSAs(registered_node):
 
-        # XML
-        client_configuration = "<config xmlns=\"urn:ietf:params:xml:ns:netconf:base:1.0\">"
-        i=0
-        for server in servers:
-            i = i+1
-            client_conf = configuration_model
-            client_conf = client_conf.replace("SA-ID",str(i))
-            client_conf = client_conf.replace("SERVER-ADDRESS",server)
-            if i==len(servers) or i==1:
-                client_conf = client_conf.replace("LAST-NSF-FLAG","true")
-            else:
-                client_conf = client_conf.replace("LAST-NSF-FLAG","false")
+        control_address = registered_nodes[registered_node][0]
 
-            client_conf = client_conf.replace("CLIENT-CERT",node_cert)
-            client_configuration = client_configuration + client_conf
+        # set up of TLS associations between all stable nodes #
+        if registered_node > 0:
 
-        client_configuration = client_configuration + "</config>"
+            servers = []
+            for server in range(0,registered_node,1):
+                servers.append(registered_nodes[server][1])
 
-        # edit config
-        netconf_sessions[control_address].edit_config(target='running', config=client_configuration, test_option='test-then-set')
+            # XML
+            client_configuration = "<config xmlns=\"urn:ietf:params:xml:ns:netconf:base:1.0\">"
+            i=0
+            for server in servers:
+                i = i+1
+                client_conf = configuration_model
+                client_conf = client_conf.replace("SA-ID",str(i))
+                client_conf = client_conf.replace("SERVER-ADDRESS",server)
+                if i==len(servers) or i==1:
+                    client_conf = client_conf.replace("LAST-NSF-FLAG","true")
+                else:
+                    client_conf = client_conf.replace("LAST-NSF-FLAG","false")
 
+                client_conf = client_conf.replace("CLIENT-CERT",node_certs[control_address])
+                client_configuration = client_configuration + client_conf
+
+            client_configuration = client_configuration + "</config>"
+
+            # edit config
+            netconf_sessions[control_address].edit_config(target='running', config=client_configuration, test_option='test-then-set')
+
+        # new node completely configured
+        netconf_sessions[control_address].close_session()
 
     app.run(host='0.0.0.0', port=5000)
+
 
 if __name__ == '__main__':
     print("Starting the controller...")

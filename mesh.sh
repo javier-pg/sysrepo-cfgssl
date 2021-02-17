@@ -65,11 +65,11 @@ do
 	e_hours=$(echo $end_time | cut -d":" -f1)
 	e_minutes=$(echo $end_time | cut -d":" -f2)
 	e_seconds=$(echo $end_time | cut -d":" -f3)
-	e_time=$(echo "$e_hours * 24 * 60 +$e_minutes * 60 + $e_seconds" | bc -l)
+	e_time=$(echo "$e_hours * 24 * 60 + $e_minutes * 60 + $e_seconds" | bc -l)
 
 
 	duration=$(echo $e_time - $b_time | bc -l)
-	echo $number_nodes";"$duration >> "./experimental_data/"mesh_times.txt
+	echo $number_nodes";"$begin_time";"$end_time";"$duration >> "./experimental_data/"mesh_times.txt
 	echo "Measuring times...DONE"
 
 	rm capture.txt capture.pcap
