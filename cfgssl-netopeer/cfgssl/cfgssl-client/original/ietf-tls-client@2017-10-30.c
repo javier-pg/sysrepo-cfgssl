@@ -99,45 +99,6 @@ struct ns_pair namespace_mapping[] = {{"tlsc", "urn:ietf:params:xml:ns:yang:ietf
  * You can safely modify the bodies of all function as well as add new functions for better lucidity of code.
  */
 
- int send_log() {
-  char buffer[26];
-  int millisec;
-  struct tm* tm_info;
-  struct timeval tv;
-  gettimeofday(&tv, NULL);
-  millisec = lrint(tv.tv_usec/1000.0); // Round to nearest millisec
-  if (millisec>=1000) { // Allow for rounding up to nearest second
-    millisec -=1000;
-    tv.tv_sec++;
-  }
-  tm_info = localtime(&tv.tv_sec);
-  strftime(buffer, 26, "%s", tm_info);
-
-  char start_time[50];
-  sprintf(start_time, "%s,%03d", buffer, millisec);
-
-  int clientSocket, portNum, nBytes;
-  struct sockaddr_in serverAddr;
-  socklen_t addr_size;
-
-  /*Create UDP socket*/
-  clientSocket = socket(PF_INET, SOCK_DGRAM, 0);
-
-  /*Configure settings in address struct*/
-  serverAddr.sin_family = AF_INET;
-  serverAddr.sin_port = htons(514);
-  serverAddr.sin_addr.s_addr = inet_addr("10.0.1.200");
-  memset(serverAddr.sin_zero, '\0', sizeof(serverAddr.sin_zero));
-
-  /*Initialize size variable to be used later on*/
-  addr_size = sizeof(serverAddr);
-  nBytes = strlen(start_time) + 1;
-
-  /*Send message to server*/
-  sendto(clientSocket,start_time,nBytes,0,(struct sockaddr *)&serverAddr,addr_size);
-
-  return 0;
-}
 
 /**
  * @brief This callback will be run when node in path /tlsc:ietf-client-configurations changes
@@ -168,7 +129,8 @@ int callback_tlsc_ietf_client_configurations(void **data, XMLDIFF_OP op, xmlNode
 	char* node_content;
 	int measure = 0;
 	char init_connection[500];
-	strcpy(init_connection, "openssl s_client");
+	//strcpy(init_connection, "openssl s_client");
+	strcpy(init_connection, "echo Q | openssl s_client");
 
 	do {
 		node_name = element->name;
@@ -190,15 +152,10 @@ int callback_tlsc_ietf_client_configurations(void **data, XMLDIFF_OP op, xmlNode
 	}
 	while (element != NULL);
 
-	//// INIT SSL CONNECTION //
-	// if (measure) {
-	//    send_log();
-	// }
 
+	//pid_t pid = fork();
 
-	pid_t pid = fork();
-
-	if (pid == 0) {
+	//if (pid == 0) {
 			printf(" [init-ssl-client] Trying to make SSL connection\n");
 			int ret = system(init_connection);
 			if (ret==-1) {
@@ -207,11 +164,11 @@ int callback_tlsc_ietf_client_configurations(void **data, XMLDIFF_OP op, xmlNode
 			}
 			printf(" [init-ssl-client] The SSL connection has finished\n");
 
-			exit(EXIT_SUCCESS);
-		}
-	else {
+	//		exit(EXIT_SUCCESS);
+  //		}
+	//else {
 		return EXIT_SUCCESS;
-	}
+	//}
 }
 
 
