@@ -143,21 +143,23 @@ int callback_tlss_ietf_tls_server(void **data, XMLDIFF_OP op, xmlNodePtr old_nod
   }
   while (element != NULL);
 
-	if (autostart) {
-		pid_t pid = fork();
-		if (pid == 0) {
-				printf(" [ssl-server] Accepting SSL connections...\n");
-				int ret = system("service apache2 start");
-				if (ret==-1) {
-					printf(" [ssl-server] Failed to run SSL server (system call)\n");
-					exit(EXIT_FAILURE);
-				}
-				printf(" [ssl-server] The SSL connection has finished\n");
 
-				exit(EXIT_SUCCESS);
-	    }
-	}
-	return EXIT_SUCCESS;
+	//pid_t pid = fork();
+
+	//if (pid == 0) {
+	//		printf(" [ssl-server] Accepting SSL connections...\n");
+			int ret = system("service apache2 start &");
+	//		if (ret==-1) {
+	//			printf(" [ssl-server] Failed to run SSL server (system call)\n");
+	//			exit(EXIT_FAILURE);
+	//		}
+	//		printf(" [ssl-server] The SSL connection has finished\n");
+
+	//		exit(EXIT_SUCCESS);
+  //  }
+	// else {
+			return EXIT_SUCCESS;
+	//}
 }
 
 /*

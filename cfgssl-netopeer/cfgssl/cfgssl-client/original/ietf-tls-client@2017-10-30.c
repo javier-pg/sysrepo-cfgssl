@@ -129,8 +129,7 @@ int callback_tlsc_ietf_client_configurations(void **data, XMLDIFF_OP op, xmlNode
 	char* node_content;
 	int measure = 0;
 	char init_connection[500];
-	//strcpy(init_connection, "openssl s_client");
-	strcpy(init_connection, "echo Q | openssl s_client");
+	strcpy(init_connection, "openssl s_client");
 
 	do {
 		node_name = element->name;
@@ -153,9 +152,12 @@ int callback_tlsc_ietf_client_configurations(void **data, XMLDIFF_OP op, xmlNode
 	while (element != NULL);
 
 
-	//pid_t pid = fork();
 
-	//if (pid == 0) {
+	//strcat(init_connection, " &");
+
+	pid_t pid = fork();
+
+	if (pid == 0) {
 			printf(" [init-ssl-client] Trying to make SSL connection\n");
 			int ret = system(init_connection);
 			if (ret==-1) {
@@ -164,11 +166,11 @@ int callback_tlsc_ietf_client_configurations(void **data, XMLDIFF_OP op, xmlNode
 			}
 			printf(" [init-ssl-client] The SSL connection has finished\n");
 
-	//		exit(EXIT_SUCCESS);
-  //		}
-	//else {
+			exit(EXIT_SUCCESS);
+  }
+	else {
 		return EXIT_SUCCESS;
-	//}
+	}
 }
 
 

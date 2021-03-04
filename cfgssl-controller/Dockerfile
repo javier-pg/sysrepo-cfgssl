@@ -20,9 +20,11 @@ RUN echo "    StrictHostKeyChecking no" >> /etc/ssh/ssh_config
 
 COPY misc/supervisord.conf /etc/supervisord.conf
 COPY misc/configure_mesh.sh /etc/configure_mesh.sh
+COPY misc/resize.sh /etc/resize.sh
 
+RUN chmod +x /etc/resize.sh
 RUN chmod +x /etc/configure_mesh.sh
 
 CMD ["/usr/bin/supervisord", "-c", "/etc/supervisord.conf"]
 
-HEALTHCHECK --interval=5s --timeout=3s --start-period=3s --retries=3 CMD nc -z localhost 5000
+#HEALTHCHECK --interval=5s --timeout=3s --start-period=3s --retries=3 CMD nc -z localhost 5000

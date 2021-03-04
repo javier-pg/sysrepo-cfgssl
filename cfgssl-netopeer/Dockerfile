@@ -103,4 +103,4 @@ COPY conf/ports.conf /etc/apache2/ports.conf
 
 CMD ["/usr/bin/supervisord", "-c", "/etc/supervisord.conf"]
 
-HEALTHCHECK --interval=5s --timeout=3s --start-period=3s --retries=3 CMD nc -z localhost 830
+#HEALTHCHECK --interval=5s --timeout=3s --start-period=3s --retries=3 CMD nc -z localhost 830

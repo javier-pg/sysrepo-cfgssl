@@ -20,6 +20,8 @@ netconf_sessions = {}
 node_certs = {}
 
 registered_nodes = []
+configured_nodes = []
+
 cakey = createKeyPair(crypto.TYPE_RSA,1024)
 careq = createCertRequest(cakey, CN="Certificate Authority")
 cacert = createCertificate(careq, (careq, cakey), 0, (0, 60 * 60 * 24 * 365 * 10))  # ten years
@@ -40,9 +42,8 @@ def initController():
 
         ####  process node info
         content = request.get_json()
-        nfs = content['control_network_ip'] + "-" + content['data_network_ip'] + "-" + content['cert_req']
-        control_address = nfs.split("-")[0]
-        data_address = nfs.split("-")[1]
+        control_address = content['control_network_ip']
+        data_address = content['data_network_ip']
 
         # ssh management for netconf
         nfs_ssh_key = ssh_key.replace("CONTROL-IP",content['control_network_ip'])
@@ -64,17 +65,16 @@ def initController():
 
     @app.route('/mesh', methods=['POST'])
     def mesh():
-
         num_nodes = len(registered_nodes)
 
         if PARALLEL:
             # server configuration of nodes
-            with ThreadPoolExecutor(max_workers=len(registered_nodes)) as executor:
+            with ThreadPoolExecutor(max_workers=num_nodes) as executor:
                 for registered_node in range(0,num_nodes,1):
                     executor.submit(configureServer, registered_node)
 
             # client configuration of nodes
-            with ThreadPoolExecutor(max_workers=len(registered_nodes)) as executor:
+            with ThreadPoolExecutor(max_workers=num_nodes) as executor:
                 for registered_node in range(0,num_nodes,1):
                     executor.submit(createSAs, registered_node)
         else:
@@ -83,6 +83,15 @@ def initController():
             for registered_node in range(0,num_nodes,1):
                 createSAs(registered_node)
 
+        return 'OK'
+
+
+    @app.route('/resize', methods=['POST'])
+    def resize():
+        node_to_configure = len(configured_nodes)
+        configured_nodes.append(node_to_configure)
+        configureServer(node_to_configure)
+        createSAs(node_to_configure)
         return 'OK'
 
     def configureServer(registered_node):
@@ -102,14 +111,13 @@ def initController():
                                                                 hostkey_verify=True,
                                                                 look_for_keys=True,
                                                                 ssh_config=None)
-        netconf_sessions[control_address].edit_config(target='running', config=snippet, test_option='test-then-set')
+        r = netconf_sessions[control_address].edit_config(target='running', config=snippet, test_option='test-then-set')
 
 
     def createSAs(registered_node):
-
         control_address = registered_nodes[registered_node][0]
 
-        # set up of TLS associations between all stable nodes #
+                # set up of TLS associations between all stable nodes #
         if registered_node > 0:
 
             servers = []
