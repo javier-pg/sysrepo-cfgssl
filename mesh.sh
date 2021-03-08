@@ -48,11 +48,12 @@ do
 	result=$?
 
 	if [ $result -eq 0 ]; then
+	#if [ $result -ge 0 ]; then
 		echo "Configuring mesh... DONE"
 		# calculate the time for mesh configuratio
 		echo "Measuring times..."
 
-		sleep 3
+		sleep 5
 
 		docker cp $controller:/capture.pcap .
 
@@ -74,7 +75,7 @@ do
 		e_time=$(echo "$e_hours * 24 * 60 + $e_minutes * 60 + $e_seconds" | bc -l)
 
 		duration=$(echo $e_time - $b_time | bc -l)
-		echo $number_nodes";"$begin_time";"$end_time";"$duration >> "./experimental_data/"mesh_times.txt
+		echo $number_nodes";"$begin_time";"$end_time";"$duration >> "./experimental_data/"big_mesh_times.txt
 		echo "Measuring times...DONE"
 
 		rm capture.txt #capture.pcap

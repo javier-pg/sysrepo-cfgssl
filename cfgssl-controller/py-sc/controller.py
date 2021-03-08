@@ -69,12 +69,12 @@ def initController():
 
         if PARALLEL:
             # server configuration of nodes
-            with ThreadPoolExecutor(max_workers=num_nodes) as executor:
+            with ThreadPoolExecutor(max_workers=25) as executor:
                 for registered_node in range(0,num_nodes,1):
                     executor.submit(configureServer, registered_node)
 
             # client configuration of nodes
-            with ThreadPoolExecutor(max_workers=num_nodes) as executor:
+            with ThreadPoolExecutor(max_workers=25) as executor:
                 for registered_node in range(0,num_nodes,1):
                     executor.submit(createSAs, registered_node)
         else:
