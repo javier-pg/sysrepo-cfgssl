@@ -17,10 +17,7 @@ Our TLS management framework allows configuring and managing TLS security associ
 
 This repository contains an implemented proof of concept, not only to validate the suitability of the proposed solution but also to evaluate its capacity to afford the dynamic configuration of TLS connections. In particular, we evaluate the framework to configure (1) a mesh network launching N nodes at the same time, and (2) a mesh network through resizing from the first node to the N-ith node with a particular inter-arrival time between these nodes.
 
-We have executed experiments for both use cases (```mesh_experiments.sh``` and ```resizing.sh```). The performance analysis (```/experimental_data/performance_analysis.ipynb```) confirms that the implementation of this framework enables a fast and flexible procedure to manage TLS security associations between network peers in a highly-demanding mesh scenario.
-
-
-In ```experimental_data```, we find ```paper_mesh_times.txt``` with the times
+We have executed experiments for both use cases (```mesh_experiments.sh``` and ```resizing.sh```), and results reside in ```experimental_data/paper_mesh_times.txt``` and ```experimental_data/paper_resizing_times.txt```. The performance analysis (```/experimental_data/performance_analysis.ipynb```) confirms that the implementation of this framework enables a fast and flexible procedure to manage TLS security associations between network peers in a highly-demanding mesh scenario.
 
 ### Use case 1: Sudden creation of mesh network
 
