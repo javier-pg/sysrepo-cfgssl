@@ -1,3 +1,3 @@
 #!/bin/bash
-curl -m 10 --silent --output /dev/null --request POST http://localhost:5000/resize
+curl --silent --output /dev/null --header "Content-Type: application/json" --data "{\"arrival_time\":\"$1\"}" --request POST http://localhost:5000/resize
 exit $?

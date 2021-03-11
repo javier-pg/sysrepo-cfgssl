@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 import sys, os, warnings, lxml.etree as etree, threading, time
 warnings.simplefilter("ignore", DeprecationWarning)
 from ncclient import manager
@@ -11,6 +12,10 @@ from ca import createKeyPair, createCertRequest, createCertificate
 import time
 import logging
 from concurrent.futures.thread import ThreadPoolExecutor
+import threading
+from random import expovariate;
+
+mutex = threading.Lock()
 
 PARALLEL = True
 
@@ -32,6 +37,10 @@ ca_cert = ca_cert[ca_cert.find("-----BEGIN CERTIFICATE-----")+28:ca_cert.find("-
 configuration = open("/py-sc/client-conf-autostart.xml","r")
 configuration_model = configuration.read()
 configuration.close()
+
+
+#manager.logging.basicConfig(filename='/py-sc/ncclient.log', level=manager.logging.DEBUG)
+
 
 app = Flask(__name__)
 
@@ -60,6 +69,7 @@ def initController():
         node_certs[control_address] = node_cert
 
         registered_nodes.append((control_address,data_address))
+        app.logger.info(str(control_address)+":"+str(data_address))
         return 'OK'
 
 
@@ -88,13 +98,33 @@ def initController():
 
     @app.route('/resize', methods=['POST'])
     def resize():
-        node_to_configure = len(configured_nodes)
-        configured_nodes.append(node_to_configure)
-        configureServer(node_to_configure)
-        createSAs(node_to_configure)
+        content = request.get_json()
+        arrival_time = content['arrival_time']
+
+        num_nodes = len(registered_nodes)
+
+        if float(arrival_time) == -1.0:
+            for registered_node in range(0,num_nodes,1):
+                resizeNode(registered_node)
+        else:
+            with ThreadPoolExecutor(max_workers=25) as executor:
+                for registered_node in range(0,num_nodes,1):
+                    executor.submit(resizeNode, registered_node)
+                    time.sleep(expovariate(1.0 / float(arrival_time)))
+
         return 'OK'
 
+
+    def resizeNode(registered_node):
+        try:
+            configureServer(registered_node)
+            createSAs(registered_node)
+        except Exception as err:
+            app.logger.info(str(registered_node)+" -- "+str(err))
+
+
     def configureServer(registered_node):
+
         control_address = registered_nodes[registered_node][0]
 
         snippet = etree.tostring(etree.parse("/py-sc/server-conf-autostart.xml"), pretty_print=True)
@@ -103,7 +133,7 @@ def initController():
 
         netconf_sessions[control_address] = manager.connect_ssh(host=control_address,
                                                                 port=830,
-                                                                timeout=None,
+                                                                timeout=60,
                                                                 username="javier",
                                                                 password=None,
                                                                 key_filename=None,
@@ -111,44 +141,48 @@ def initController():
                                                                 hostkey_verify=True,
                                                                 look_for_keys=True,
                                                                 ssh_config=None)
-        r = netconf_sessions[control_address].edit_config(target='running', config=snippet, test_option='test-then-set')
+        if netconf_sessions[control_address] is not None:
+            r = netconf_sessions[control_address].edit_config(target='running', config=snippet, test_option='test-then-set')
 
 
     def createSAs(registered_node):
+
         control_address = registered_nodes[registered_node][0]
 
-                # set up of TLS associations between all stable nodes #
-        if registered_node > 0:
+        if netconf_sessions[control_address] is not None:
+            # set up of TLS associations between all stable nodes #
+            if registered_node > 0:
 
-            servers = []
-            for server in range(0,registered_node,1):
-                servers.append(registered_nodes[server][1])
+                servers = []
+                for server in range(0,registered_node,1):
+                    servers.append(registered_nodes[server][1])
 
-            # XML
-            client_configuration = "<config xmlns=\"urn:ietf:params:xml:ns:netconf:base:1.0\">"
-            i=0
-            for server in servers:
-                i = i+1
-                client_conf = configuration_model
-                client_conf = client_conf.replace("SA-ID",str(i))
-                client_conf = client_conf.replace("SERVER-ADDRESS",server)
-                if i==len(servers) or i==1:
-                    client_conf = client_conf.replace("LAST-NSF-FLAG","true")
-                else:
-                    client_conf = client_conf.replace("LAST-NSF-FLAG","false")
+                # XML
+                client_configuration = "<config xmlns=\"urn:ietf:params:xml:ns:netconf:base:1.0\">"
+                i=0
+                for server in servers:
+                    i = i+1
+                    client_conf = configuration_model
+                    client_conf = client_conf.replace("SA-ID",str(i))
+                    client_conf = client_conf.replace("SERVER-ADDRESS",server)
+                    if i==len(servers) or i==1:
+                        client_conf = client_conf.replace("LAST-NSF-FLAG","true")
+                    else:
+                        client_conf = client_conf.replace("LAST-NSF-FLAG","false")
 
-                client_conf = client_conf.replace("CLIENT-CERT",node_certs[control_address])
-                client_configuration = client_configuration + client_conf
+                    client_conf = client_conf.replace("CLIENT-CERT",node_certs[control_address])
+                    client_configuration = client_configuration + client_conf
 
-            client_configuration = client_configuration + "</config>"
+                client_configuration = client_configuration + "</config>"
 
-            # edit config
-            netconf_sessions[control_address].edit_config(target='running', config=client_configuration, test_option='test-then-set')
+                # edit config
+                netconf_sessions[control_address].edit_config(target='running', config=client_configuration, test_option='test-then-set')
 
-        # new node completely configured
-        netconf_sessions[control_address].close_session()
+            # new node completely configured
+            netconf_sessions[control_address].close_session()
 
-    app.run(host='0.0.0.0', port=5000)
+
+    app.run(host='0.0.0.0', port=5000, threaded=True, debug=True)
 
 
 if __name__ == '__main__':

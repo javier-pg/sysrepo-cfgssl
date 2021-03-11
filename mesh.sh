@@ -32,7 +32,6 @@ do
 		controller=$(docker-compose ps | head -n+3 | tail -n1 | cut -d" " -f1)
 	fi
 
-	# launch mesh configuration
 	echo "Registering nodes..."
 
 	for nsf in `seq 0 $(($number_nodes - 1))`;
@@ -75,10 +74,10 @@ do
 		e_time=$(echo "$e_hours * 24 * 60 + $e_minutes * 60 + $e_seconds" | bc -l)
 
 		duration=$(echo $e_time - $b_time | bc -l)
-		echo $number_nodes";"$begin_time";"$end_time";"$duration >> "./experimental_data/"big_mesh_times.txt
+		echo $number_nodes";"$begin_time";"$end_time";"$duration >> "./experimental_data/"mesh_times.txt
 		echo "Measuring times...DONE"
 
-		rm capture.txt #capture.pcap
+		rm capture.txt capture.pcap
 
 		round=$(($round + 1))
 	else

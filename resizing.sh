@@ -1,24 +1,16 @@
 #!/bin/bash
+export DOCKER_CLIENT_TIMEOUT=600
+export COMPOSE_HTTP_TIMEOUT=600
 
 # arguments
 number_nodes=$1
 number_experiments=$2
+
 echo "Running $number_experiments experiments resizing a mesh network until $number_nodes nodes"
 
 
-for time_between_nsfs in 0.05 0.1 0.25 0.5 1.0 2.0 5.0; #0.25 0.5 1.0 2.0 3.0 5.0 10.0 -1.0;
+for time_between_nsfs in 10.0 5.0 3.0 2.0 1.0 -1.0;
 do
-	arrival_times=()
-	for nsf in `seq 0 $(($number_nodes - 1))`;
-	do
-		#if (( $(echo "$time_between_nsfs!=-1.0" | bc -l) )); then
-		#	s=$(python -c"from random import expovariate; print(expovariate(1.0 / $time_between_nsfs))")
-		#	arrival_times[$nsf]=$s
-		#else
-		#	arrival_times[$nsf]=-1.0
-		#fi
-		arrival_times[$nsf]=$time_between_nsfs
-	done
 
 	echo "Running $number_experiments experiments with $number_nodes nodes and inter arrival time of $time_between_nsfs seconds"
 
@@ -41,59 +33,48 @@ do
 		done
 		echo "Launching containers... OK"
 
+		# wait until controller and nodes are running
+		#running=-1
+		#while (($running < $(($number_nodes + 1))))
+		#do
+		#	sleep 1
+		#	running=$(docker ps | grep -e "(healthy)" | wc -l)
+		#done
+		#echo "Launching containers... OK"
+
+
 		# names of NSF's containers and controller's container #
 		#if [ $round -eq 0 ]; then
 		containers=($(docker-compose ps | tail -n +4 | cut -d" " -f1 | sort -V))
 		controller=$(docker-compose ps | head -n+3 | tail -n1 | cut -d" " -f1)
 		#fi
 
-		# launch mesh configuration
 		echo "Registering nodes..."
 
+		containers_ips=()
 		for nsf in `seq 0 $(($number_nodes - 1))`;
 		do
 			docker exec ${containers[$nsf]} /etc/register.sh
+			ipaddress=$(docker inspect -f '{{ .NetworkSettings.Networks.sysrepocfgssl_sdn_control.IPAddress }}' ${containers[$nsf]})
+			containers_ips[$nsf]=$ipaddress
 		done
 
 		echo "Registering nodes... DONE"
 
 		echo "Resizing network..."
 
-		#arrival_times=()
-
-		#for nsf in `seq 0 $(($number_nodes - 1))`;
-		#do
-			#if (( $(echo "$time_between_nsfs!=-1.0" | bc -l) )); then
-			#	s=$(python -c"from random import expovariate; print(expovariate(1.0 / $time_between_nsfs))")
-			#	arrival_times[$nsf]=$s
-			#else
-			#	arrival_times[$nsf]=-1.0
-			#fi
-		#done
-
-		nsf=0
-		for arrival_time in ${arrival_times[@]};
-		do
-			if (( $(echo "$arrival_time==-1.0" | bc -l) )); then
-				docker exec $controller /etc/resize.sh
-			else
-				sleep $arrival_time
-				docker exec -dt $controller /etc/resize.sh
-			fi
-			nsf=$(($nsf + 1))
-		done
+		docker exec $controller /etc/resize.sh $time_between_nsfs
 
 		echo "Resizing network... DONE"
 		# calculate the time for mesh configuratio
 		echo "Measuring times..."
 
-		sleep 4
+		sleep 3
 
 		docker cp $controller:/capture.pcap .
 
-		containers_ips=$(tcpdump -r capture.pcap 'tcp[tcpflags] & (tcp-syn) != 0' | grep "10.0.1.* > 10.0.1.200.*Flags \[S\]" | cut -d" " -f3 | cut -d"." -f1,2,3,4 | sort | uniq)
-		#echo $containers_ips
-		containers_ips=($containers_ips)
+		#containers_ips=$(tcpdump -r capture.pcap 'tcp[tcpflags] & (tcp-syn) != 0' | grep -E  "10\.0\.1\.200\.[0-9]+ > 10\.0\.1\.[0-9]+\.830.*Flags \[S\]" | cut -d" " -f5 | cut -d"." -f1,2,3,4)
+		#containers_ips=($containers_ips)
 
 		tcpdump -r capture.pcap > capture.txt
 
@@ -117,9 +98,8 @@ do
 
 			duration=$(echo $e_time - $b_time | bc -l)
 
+			echo $time_between_nsfs";"$nsf";"$begin_time";"$end_time";"$duration >> "./experimental_data/"resizing_times.txt
 			nsf=$(($nsf + 1))
-			echo $time_between_nsfs";"$nsf";"$begin_time";"$end_time";"$duration >> "./experimental_data/"resizing_times_constant.txt
-
 		done
 
 		echo "Measuring times...DONE"
