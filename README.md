@@ -8,7 +8,7 @@ Requirements:
 * ```docker-compose```
 
 
-### About the project
+## About the project
 
 
 The Transport Layer Security (TLS) protocol is widely employed to protect end-to-end communications between network peers (applications or nodes). However, the administrators usually have to configure parameters (e.g. cryptography algorithms or authentication credentials) for the establishment of TLS connections manually. However, this way of managing security associations becomes infeasible when the number of network peers is high.
@@ -19,7 +19,7 @@ This repository contains an implemented proof of concept, not only to validate t
 
 We have executed experiments for both use cases (```mesh_experiments.sh``` and ```resizing.sh```), and results reside in ```experimental_data/paper_mesh_times.txt``` and ```experimental_data/paper_resizing_times.txt```. The performance analysis (```/experimental_data/performance_analysis.ipynb```) confirms that the implementation of this framework enables a fast and flexible procedure to manage TLS security associations between network peers in a highly-demanding mesh scenario.
 
-### Use case 1: Sudden creation of mesh network
+## Use case 1: Sudden creation of mesh network
 
 1. Execute the script ```mesh.sh```:
 ```bash
@@ -50,7 +50,7 @@ sudo ./mesh_experiments.sh
 5. The notebook ```/experimental_data/performance_analysis.ipynb``` implements the code to analyze the experimental data
 
 
-### Use case 2: On-demand creation of mesh network
+## Use case 2: On-demand creation of mesh network
 
 1. Execute the script ```resizing.sh```:
 ```bash
