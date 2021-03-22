@@ -96,8 +96,8 @@ def initController():
         return 'OK'
 
 
-    @app.route('/resize', methods=['POST'])
-    def resize():
+    @app.route('/meshresize', methods=['POST'])
+    def meshresize():
         content = request.get_json()
         arrival_time = content['arrival_time']
 
@@ -115,10 +115,44 @@ def initController():
         return 'OK'
 
 
-    def resizeNode(registered_node):
+    @app.route('/star', methods=['POST'])
+    def star():
+        num_nodes = len(registered_nodes)
+
+        configureServer(0)
+
+        # client configuration of nodes
+        with ThreadPoolExecutor(max_workers=25) as executor:
+            for registered_node in range(0,num_nodes,1):
+                executor.submit(createSAs, registered_node, True)
+
+        return 'OK'
+
+
+    @app.route('/starresize', methods=['POST'])
+    def starresize():
+        content = request.get_json()
+        arrival_time = content['arrival_time']
+
+        num_nodes = len(registered_nodes)
+
+        if float(arrival_time) == -1.0:
+            for registered_node in range(0,num_nodes,1):
+                resizeNode(registered_node, True)
+        else:
+            with ThreadPoolExecutor(max_workers=25) as executor:
+                for registered_node in range(0,num_nodes,1):
+                    executor.submit(resizeNode, registered_node, True)
+                    time.sleep(expovariate(1.0 / float(arrival_time)))
+
+        return 'OK'
+
+
+    def resizeNode(registered_node, star=False):
         try:
-            configureServer(registered_node)
-            createSAs(registered_node)
+            if (not star or ( star and registered_node == 0 ) ):
+                configureServer(registered_node)
+            createSAs(registered_node, star)
         except Exception as err:
             app.logger.info(str(registered_node)+" -- "+str(err))
 
@@ -145,17 +179,34 @@ def initController():
             r = netconf_sessions[control_address].edit_config(target='running', config=snippet, test_option='test-then-set')
 
 
-    def createSAs(registered_node):
+    def createSAs(registered_node, star=False):
 
         control_address = registered_nodes[registered_node][0]
+
+        # in star topology
+        if (star and registered_node>0):
+            netconf_sessions[control_address] = manager.connect_ssh(host=control_address,
+                                                                    port=830,
+                                                                    timeout=60,
+                                                                    username="javier",
+                                                                    password=None,
+                                                                    key_filename=None,
+                                                                    allow_agent=True,
+                                                                    hostkey_verify=True,
+                                                                    look_for_keys=True,
+                                                                    ssh_config=None)
+
 
         if netconf_sessions[control_address] is not None:
             # set up of TLS associations between all stable nodes #
             if registered_node > 0:
 
-                servers = []
-                for server in range(0,registered_node,1):
-                    servers.append(registered_nodes[server][1])
+                if star:
+                    servers = [registered_nodes[0][1]]
+                else:
+                    servers = []
+                    for server in range(0,registered_node,1):
+                        servers.append(registered_nodes[server][1])
 
                 # XML
                 client_configuration = "<config xmlns=\"urn:ietf:params:xml:ns:netconf:base:1.0\">"

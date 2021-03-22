@@ -20,10 +20,14 @@ RUN echo "    StrictHostKeyChecking no" >> /etc/ssh/ssh_config
 
 COPY misc/supervisord.conf /etc/supervisord.conf
 COPY misc/configure_mesh.sh /etc/configure_mesh.sh
-COPY misc/resize.sh /etc/resize.sh
+COPY misc/configure_star.sh /etc/configure_star.sh
+COPY misc/mesh_resize.sh /etc/mesh_resize.sh
+COPY misc/star_resize.sh /etc/star_resize.sh
 
-RUN chmod +x /etc/resize.sh
+RUN chmod +x /etc/mesh_resize.sh
+RUN chmod +x /etc/star_resize.sh
 RUN chmod +x /etc/configure_mesh.sh
+RUN chmod +x /etc/configure_star.sh
 
 CMD ["/usr/bin/supervisord", "-c", "/etc/supervisord.conf"]
 

@@ -63,7 +63,7 @@ do
 
 		echo "Resizing network..."
 
-		docker exec $controller /etc/resize.sh $time_between_nsfs
+		docker exec $controller /etc/mesh_resize.sh $time_between_nsfs
 
 		echo "Resizing network... DONE"
 		# calculate the time for mesh configuratio
@@ -98,7 +98,7 @@ do
 
 			duration=$(echo $e_time - $b_time | bc -l)
 
-			echo $time_between_nsfs";"$nsf";"$begin_time";"$end_time";"$duration >> "./experimental_data/"resizing_times.txt
+			echo $time_between_nsfs";"$nsf";"$begin_time";"$end_time";"$duration >> "./experimental_data/"mesh_resizing_times.txt
 			nsf=$(($nsf + 1))
 		done
 
