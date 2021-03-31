@@ -6,7 +6,7 @@ export COMPOSE_HTTP_TIMEOUT=600
 number_nodes=$1
 number_experiments=$2
 
-echo "Running $number_experiments experiments resizing a star network until $number_nodes nodes"
+echo "Running $number_experiments experiments resizing a mesh network until $number_nodes nodes"
 
 
 for time_between_nsfs in 10.0 5.0 3.0 2.0 1.0 -1.0;
@@ -63,10 +63,10 @@ do
 
 		echo "Resizing network..."
 
-		docker exec $controller /etc/star_resize.sh $time_between_nsfs
+		docker exec $controller /etc/mesh_resize.sh $time_between_nsfs
 
 		echo "Resizing network... DONE"
-		# calculate the time for star configuratio
+		# calculate the time for mesh configuratio
 		echo "Measuring times..."
 
 		sleep 3
@@ -98,7 +98,7 @@ do
 
 			duration=$(echo $e_time - $b_time | bc -l)
 
-			echo $time_between_nsfs";"$nsf";"$begin_time";"$end_time";"$duration >> "./experimental_data/"star_resizing_times.txt
+			echo $time_between_nsfs";"$nsf";"$begin_time";"$end_time";"$duration >> "./experimental_data/"mesh_resizing_times.txt
 			nsf=$(($nsf + 1))
 		done
 
