@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # experiment parameters
-initial_mesh_size=5
+initial_mesh_size=70
 mesh_step=5
 max_mesh_size=80
 number_experiments_per_mesh=20

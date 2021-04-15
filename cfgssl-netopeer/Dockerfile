@@ -1,8 +1,9 @@
 FROM ubuntu:16.04
 
-RUN apt-get update && \
-apt-get -y install tcpdump bc netcat net-tools supervisor curl wget libreadline-dev libxml2-dev python-libxml2 dh-autoreconf libtool-bin libxslt1-dev libcurl4-openssl-dev xsltproc python-setuptools cmake zlib1g-dev libssl-dev git pkg-config python3-dev python-pip && \
-pip install pyang
+RUN echo jiji
+RUN apt-get update
+RUN apt-get -y install tcpdump bc netcat net-tools supervisor curl wget libreadline-dev libxml2-dev python-libxml2 dh-autoreconf libtool-bin libxslt1-dev libcurl4-openssl-dev xsltproc python-setuptools cmake zlib1g-dev libssl-dev git pkg-config python3-dev python-pip
+RUN pip install pyang
 
 RUN cd && \
 git clone -b v0-7 https://git.libssh.org/projects/libssh.git && \
@@ -37,6 +38,7 @@ make && \
 # make test && \
 make install
 
+RUN pip install --upgrade "pip < 21.0"
 RUN pip install pyopenssl
 
 # NETCONF: TLS functionality in nfs
@@ -87,7 +89,6 @@ RUN cat /root/.ssh/id_rsa > /etc/ssh/ssh_host_rsa_key
 COPY conf/startup-config.xml /usr/local/etc/netopeer/cfgnetopeer/datastore.xml
 COPY conf/startup-acm-config.xml /var/lib/libnetconf/datastore-acm.xml
 
-
 COPY misc/register.sh /etc/register.sh
 COPY misc/generate-keys.py /etc/generate-keys.py
 RUN chmod +x /etc/register.sh
@@ -95,11 +96,26 @@ RUN chmod +x /etc/generate-keys.py
 
 COPY misc/supervisord.conf /etc/supervisord.conf
 
-RUN apt-get -y install apache2 && \
-a2enmod ssl
+# install openssl 1.1.1 (which supports tls1.3)
+RUN wget https://www.openssl.org/source/openssl-1.1.1g.tar.gz && \
+tar -zxf openssl-1.1.1g.tar.gz && cd openssl-1.1.1g && \
+./config && \
+make && \
+mv /usr/bin/openssl ~/tmp && \
+make install && \
+ln -s /usr/local/bin/openssl /usr/bin/openssl && \
+ldconfig
 
-COPY conf/ssl.conf /etc/apache2/sites-enabled/ssl.conf
-COPY conf/ports.conf /etc/apache2/ports.conf
+# install apache 2.4 (which supports tls1.3)
+RUN apt-get install -y libapr1-dev libaprutil1-dev libpcre3-dev
+RUN wget https://ftp.cixug.es/apache//httpd/httpd-2.4.46.tar.gz && \
+gzip -d httpd-2.4.46.tar.gz && \
+tar xvf httpd-2.4.46.tar && \
+cd httpd-2.4.46 && \
+./configure && \
+make && \
+make install
+COPY conf/httpd.conf /usr/local/apache2/conf/httpd.conf
 
 CMD ["/usr/bin/supervisord", "-c", "/etc/supervisord.conf"]
 

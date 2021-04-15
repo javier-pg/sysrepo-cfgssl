@@ -148,7 +148,7 @@ int callback_tlss_ietf_tls_server(void **data, XMLDIFF_OP op, xmlNodePtr old_nod
 
 	//if (pid == 0) {
 	//		printf(" [ssl-server] Accepting SSL connections...\n");
-			int ret = system("service apache2 start &");
+			int ret = system("/usr/local/apache2/bin/apachectl -k start");
 	//		if (ret==-1) {
 	//			printf(" [ssl-server] Failed to run SSL server (system call)\n");
 	//			exit(EXIT_FAILURE);

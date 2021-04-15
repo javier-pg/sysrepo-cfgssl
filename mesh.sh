@@ -84,7 +84,6 @@ do
 		echo "Configuring mesh... FAILED"
 	fi
 
-
 	echo "Stopping containers..."
 	docker-compose stop
 	exited=-1

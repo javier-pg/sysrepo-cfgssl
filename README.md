@@ -15,11 +15,11 @@ The Transport Layer Security (TLS) protocol is widely employed to protect end-to
 
 Our TLS management framework allows configuring and managing TLS security associations in a dynamic and an autonomous manner. The proposed solution, which is based on well-known standardized protocols, models the necessary configuration parameters to establish a secure TLS connection between network peers. Nowadays, this is required in several application scenarios such as virtual private networks (VPNs), virtualized network functions (VNFs) or service function chains (SFCs). Our framework is based on standard elements of the Software Defined Networking (SDN) paradigm, which is widely adopted to provide flexibility to network management, and it is being deployed for the aforementioned particular scenarios.
 
-This repository contains an implemented proof of concept, not only to validate the suitability of the proposed solution but also to evaluate its capacity to afford the dynamic configuration of TLS connections. In particular, we evaluate the framework to configure (1) a mesh network launching N nodes at the same time, (2) a mesh network through resizing from the first node to the Nth node (in which nodes could arrive following a Poisson process), (3) a star network launching N nodes at the same time, and (4) a star network through resizing from the first node to the Nth node (in which nodes could arrive following a Poisson process).
+This repository contains an implemented proof of concept, not only to validate the suitability of the proposed solution but also to evaluate its capacity to afford the dynamic configuration of TLS connections. In particular, we evaluate the framework to configure (1) a mesh network launching N nodes at the same time, (2) a mesh network through resizing from the first node to the Nth node (in which nodes could arrive following a Poisson process), and (3) a star network launching N nodes at the same time.
 
-We have executed experiments for the aforementioned tasks (```mesh_experiments.sh```, ```mesh_resizing.sh```, ```star_experiments.sh```, and ```star_resizing.sh```), and results reside in ```experimental_data```: ```mesh_times.txt```, ```mesh_resizing_times.txt```, ```star_times.txt```, and ```star_resizing_times.txt```. The performance analysis (```/experimental_data/performance_analysis.ipynb```) confirms that the implementation of this framework enables a fast and flexible procedure to manage TLS security associations between network peers.
+We have executed experiments for the aforementioned tasks (```mesh_experiments.sh```, ```mesh_resizing.sh```, and ```star_experiments.sh```), and results reside in ```experimental_data```: ```mesh_times.txt```, ```mesh_resizing_times.txt```, and ```star_times.txt```. The performance analysis (```/experimental_data/performance_analysis.ipynb```) confirms that the implementation of this framework enables a fast and flexible procedure to manage TLS security associations between network peers.
 
-## TASK 1: Sudden creation of mesh network
+## TASK 1: To form a mesh of n nodes
 
 1. Execute the script ```mesh.sh```:
 ```bash
@@ -50,7 +50,7 @@ sudo ./mesh_experiments.sh
 5. The notebook ```/experimental_data/performance_analysis.ipynb``` implements the code to analyze the experimental data
 
 
-## TASK 2: On-demand creation of mesh network
+## TASK 2: To add a new node to an existing mesh
 
 1. Execute the script ```mesh_resizing.sh```:
 ```bash
@@ -79,7 +79,7 @@ scenario_inter_arrival_time ; ith_node ; node_initial_timestamp ; node_final_tim
 4. The notebook ```/experimental_data/performance_analysis.ipynb``` implements the code to analyze the experimental data
 
 
-## TASK 3: Sudden creation of star network
+## TASK 3: To form a star topology of n nodes
 
 1. Execute the script ```star.sh```:
 ```bash
@@ -108,32 +108,3 @@ sudo ./star_experiments.sh
 ```
 
 5. The notebook ```/experimental_data/performance_analysis.ipynb``` implements the code to analyze the experimental data
-
-
-## TASK 4: On-demand creation of star network
-
-1. Execute the script ```star_resizing.sh```:
-```bash
-sudo ./star_resizing.sh number_nodes number_experiments
-```
-* ```number_nodes```: Final number of nodes of the star
-* ```number_experiments```: Number of experiments to launch
-
-  By default, the script supposes an arrival process of the nodes based on a Poisson process. In particular, we propose different scenario conditions with averaged inter arrival times of ```10.0, 5.0, 3.0, 2.0,``` and ```1.0``` seconds. Specially, we denote with the value ```-1.0``` an specific scenario in which a new node is configured when the previous one has just been set up.
-
-2. To edit the inter-arrival times of the nodes, play with the _```time_between_nsfs```_ variable in ```star_experiments.sh```:
-```bash
-for time_between_nsfs in 10.0 5.0 3.0 2.0 1.0 -1.0;
-do
-    ...
-done
-```
-
-3. Experimental measurements are generated in ```experimental_data``` folder as follows:
-* ```star_resizing_times.txt```: Time for controller to configure each node of the star network. Each line presents the time of configuration of each node for each experiment, the first column reflects the number of nodes, the second column presents the associated configuration time (in seconds).
-
-```csv
-scenario_inter_arrival_time ; ith_node ; node_initial_timestamp ; node_final_timestamp ; node_configuration_duration
-```
-
-4. The notebook ```/experimental_data/performance_analysis.ipynb``` implements the code to analyze the experimental data

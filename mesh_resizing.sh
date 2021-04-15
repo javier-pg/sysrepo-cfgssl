@@ -9,7 +9,7 @@ number_experiments=$2
 echo "Running $number_experiments experiments resizing a mesh network until $number_nodes nodes"
 
 
-for time_between_nsfs in 10.0 5.0 3.0 2.0 1.0 -1.0;
+for time_between_nsfs in -1.0; #10.0 5.0 3.0 2.0 1.0;
 do
 
 	echo "Running $number_experiments experiments with $number_nodes nodes and inter arrival time of $time_between_nsfs seconds"

@@ -79,12 +79,12 @@ def initController():
 
         if PARALLEL:
             # server configuration of nodes
-            with ThreadPoolExecutor(max_workers=num_nodes) as executor:
+            with ThreadPoolExecutor(max_workers=25) as executor:
                 for registered_node in range(0,num_nodes,1):
                     executor.submit(configureServer, registered_node)
 
             # client configuration of nodes
-            with ThreadPoolExecutor(max_workers=num_nodes) as executor:
+            with ThreadPoolExecutor(max_workers=25) as executor:
                 for registered_node in range(0,num_nodes,1):
                     executor.submit(createSAs, registered_node)
         else:
@@ -107,7 +107,7 @@ def initController():
             for registered_node in range(0,num_nodes,1):
                 resizeNode(registered_node)
         else:
-            with ThreadPoolExecutor(max_workers=num_nodes) as executor:
+            with ThreadPoolExecutor(max_workers=25) as executor:
                 for registered_node in range(0,num_nodes,1):
                     executor.submit(resizeNode, registered_node)
                     time.sleep(expovariate(1.0 / float(arrival_time)))
@@ -122,7 +122,7 @@ def initController():
         configureServer(0)
 
         # client configuration of nodes
-        with ThreadPoolExecutor(max_workers=num_nodes) as executor:
+        with ThreadPoolExecutor(max_workers=25) as executor:
             for registered_node in range(0,num_nodes,1):
                 executor.submit(createSAs, registered_node, True)
 
@@ -140,7 +140,7 @@ def initController():
             for registered_node in range(0,num_nodes,1):
                 resizeNode(registered_node, True)
         else:
-            with ThreadPoolExecutor(max_workers=num_nodes) as executor:
+            with ThreadPoolExecutor(max_workers=25) as executor:
                 for registered_node in range(0,num_nodes,1):
                     executor.submit(resizeNode, registered_node, True)
                     time.sleep(expovariate(1.0 / float(arrival_time)))
