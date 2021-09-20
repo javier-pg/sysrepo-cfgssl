@@ -41,6 +41,11 @@ do
 
 	echo "Registering nodes... DONE"
 
+
+	tcpdump -U -i sdn_data -w "experimental_data/tls/tls$number_nodes.pcap" &
+	sleep 2
+
+
 	echo "Configuring star..."
 
 	docker exec $controller /etc/configure_star.sh
@@ -74,7 +79,7 @@ do
 		e_time=$(echo "$e_hours * 24 * 60 + $e_minutes * 60 + $e_seconds" | bc -l)
 
 		duration=$(echo $e_time - $b_time | bc -l)
-		echo $number_nodes";"$begin_time";"$end_time";"$duration >> "./experimental_data/"star_times.txt
+		echo $number_nodes";"$begin_time";"$end_time";"$duration >> "./experimental_data/performance/"star_times.txt
 		echo "Measuring times...DONE"
 
 		rm capture.txt capture.pcap
@@ -83,6 +88,10 @@ do
 	else
 		echo "Configuring star... FAILED"
 	fi
+
+	pid=$(ps -e | pgrep tcpdump)  
+	sleep 2
+	kill -2 $pid
 
 
 	echo "Stopping containers..."

@@ -4,7 +4,7 @@
 initial_star_size=5
 star_step=5
 max_star_size=80
-number_experiments_per_star=20
+number_experiments_per_star=1
 
 #echo "Running $number_experiments experiments for each star network, from 2 node to $max_star_size nodes"
 
