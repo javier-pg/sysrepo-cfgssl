@@ -1,5 +1,5 @@
 # sysrepo-cfgssl
-Mesh scenario for SDN-based TLS management framework
+Scenarios for SDN-based TLS management framework
 
 Requirements:
 * ```Unix-based system``` (tested on Ubuntu 18.04)
