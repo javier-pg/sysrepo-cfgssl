@@ -1,15 +1,22 @@
 # sysrepo-cfgssl
 Scenarios for SDN-based TLS management framework
 
+
 Requirements:
 * ```Unix-based system``` (tested on Ubuntu 18.04)
 * ```bash```
 * ```docker```
 * ```docker-compose```
 
+## Reference
+
+Pastor-Galindo, J., López-Millán, G., Marín-López, R., Pereñíguez-García, F., and Cánovas, Ó.
+A Framework for Dynamic Configuration of TLS Connections Based on Standards. 
+Journal of Network and Systems Management 30, 24 (2022). https://doi.org/10.1007/s10922-021-09640-6
+Online: https://rdcu.be/cFCsA
+
 
 ## About the project
-
 
 The Transport Layer Security (TLS) protocol is widely employed to protect end-to-end communications between network peers (applications or nodes). However, the administrators usually have to configure parameters (e.g. cryptography algorithms or authentication credentials) for the establishment of TLS connections manually. However, this way of managing security associations becomes infeasible when the number of network peers is high.
 
